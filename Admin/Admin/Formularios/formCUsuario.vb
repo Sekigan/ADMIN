@@ -2,6 +2,8 @@
     Dim met As New Metodos
     'Cargar Combos y DataGrindView
     Private Sub formCUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtId.Text = contar()
+
         muestra(dgvUsuarios, "select	 EMPLEADOS.ID_EMPLEADO as ID_EMPLEADO,
          EMPLEADOS.NOMBRE as NOMBRE,
          EMPLEADOS.PATERNO as PATERNO,
@@ -197,6 +199,7 @@
 
 
                         MessageBox.Show("EMPLEADO INGRESADO")
+
                         muestra(dgvUsuarios, "select	 EMPLEADOS.ID_EMPLEADO as ID_EMPLEADO,
          EMPLEADOS.NOMBRE as NOMBRE,
          EMPLEADOS.PATERNO as PATERNO,
@@ -238,6 +241,7 @@ where   empleados.id_pais = colonias.id_pais and
             End Try
             Dim met As New Metodos
             met.LimpiarCamposG(gbUsr)
+            txtId.Text = contar()
         Else
             MsgBox("EL ID YA EXISTE..")
         End If
@@ -297,12 +301,13 @@ where   empleados.id_pais = colonias.id_pais and
             MsgBox("Error")
         End Try
 
-
+        txtId.Text = contar()
         met.LimpiarCamposG(gbUsr)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         met.LimpiarCamposG(gbUsr)
+        txtId.Text = contar()
     End Sub
 
     Private Sub dgvUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellContentClick
@@ -358,26 +363,30 @@ where   empleados.id_pais = colonias.id_pais and
                     ComboBoxPais.SelectedValue & ",' WHERE ID_EMPLEADO=" & txtId.Text
 
             txtContraseña.Text = txtContraseña.Text.Trim
-            If txtContraseña.Text = "" Then
-                MessageBox.Show("Falta capturar datos")
-                txtContraseña.Focus()
+            If ChBoxCambiarContra.Checked Then
 
-            Else
-                If Not txtContraseña.Text.Equals(txtConfirmar.Text) Then
-                    MessageBox.Show("No coincide la contraseña")
-                    txtConfirmar.Focus()
-                ElseIf Not Contra.Equals(TxtAnteriorContra.Text) Then
-                    MessageBox.Show("Contraseña Erronea")
-                    TxtAnteriorContra.Focus()
+
+                If txtContraseña.Text = "" Then
+                    MessageBox.Show("Falta capturar datos")
+                    txtContraseña.Focus()
+
                 Else
-                    contrasena = "UPDATE LOGIN SET CONTRASENA='" & txtContraseña.Text & "' WHERE ID_EMPLEADO=" & txtId.Text
+                    If Not txtContraseña.Text.Equals(txtConfirmar.Text) Then
+                        MessageBox.Show("No coincide la contraseña")
+                        txtConfirmar.Focus()
+                    ElseIf Not Contra.Equals(TxtAnteriorContra.Text) Then
+                        MessageBox.Show("Contraseña Erronea")
+                        TxtAnteriorContra.Focus()
+                    Else
+                        contrasena = "UPDATE LOGIN SET CONTRASENA='" & txtContraseña.Text & "' WHERE ID_EMPLEADO=" & txtId.Text
 
-                    met.realizarQuery(contrasena)
-                    MessageBox.Show("DATOS EMPLEADO ACTUALIZADOS")
+                        met.realizarQuery(contrasena)
+                        MessageBox.Show("DATOS EMPLEADO ACTUALIZADOS")
+                        txtId.Text = contar()
 
+                    End If
                 End If
             End If
-
 
 
 
@@ -464,4 +473,20 @@ where   empleados.id_pais = colonias.id_pais and
         TxtAnteriorContra.Text = ""
 
     End Sub
+
+    Public Function contar() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM empleados"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
+
+
+
+
+
+
+    End Function
+
 End Class

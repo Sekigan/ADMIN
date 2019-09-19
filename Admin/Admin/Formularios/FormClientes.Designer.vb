@@ -110,7 +110,7 @@ Partial Class FormClientes
         Me.Button2.Location = New System.Drawing.Point(648, 573)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 112
+        Me.Button2.TabIndex = 18
         Me.Button2.Text = "Editar"
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -127,7 +127,7 @@ Partial Class FormClientes
         Me.btnAgregar.Location = New System.Drawing.Point(557, 573)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 111
+        Me.btnAgregar.TabIndex = 17
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = False
         '
@@ -144,7 +144,7 @@ Partial Class FormClientes
         Me.Button3.Location = New System.Drawing.Point(831, 573)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 114
+        Me.Button3.TabIndex = 20
         Me.Button3.Text = "Limpiar"
         Me.Button3.UseVisualStyleBackColor = False
         '
@@ -161,7 +161,7 @@ Partial Class FormClientes
         Me.btneliminar.Location = New System.Drawing.Point(738, 573)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btneliminar.TabIndex = 113
+        Me.btneliminar.TabIndex = 19
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = False
         '
@@ -170,8 +170,8 @@ Partial Class FormClientes
         Me.dgvClientes.AllowUserToAddRows = False
         Me.dgvClientes.AllowUserToDeleteRows = False
         Me.dgvClientes.AllowUserToOrderColumns = True
-        Me.dgvClientes.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvClientes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgvClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -194,7 +194,7 @@ Partial Class FormClientes
         Me.btnCancelar.Location = New System.Drawing.Point(956, 601)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 116
+        Me.btnCancelar.TabIndex = 21
         Me.btnCancelar.Text = "Cerrar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -247,7 +247,7 @@ Partial Class FormClientes
         Me.TxtEdad.MaxLength = 3
         Me.TxtEdad.Name = "TxtEdad"
         Me.TxtEdad.Size = New System.Drawing.Size(157, 20)
-        Me.TxtEdad.TabIndex = 98
+        Me.TxtEdad.TabIndex = 7
         '
         'Label5
         '
@@ -264,7 +264,7 @@ Partial Class FormClientes
         Me.TxtNcasa.MaxLength = 4
         Me.TxtNcasa.Name = "TxtNcasa"
         Me.TxtNcasa.Size = New System.Drawing.Size(157, 20)
-        Me.TxtNcasa.TabIndex = 96
+        Me.TxtNcasa.TabIndex = 16
         '
         'Label19
         '
@@ -281,7 +281,7 @@ Partial Class FormClientes
         Me.TxtCalle.MaxLength = 30
         Me.TxtCalle.Name = "TxtCalle"
         Me.TxtCalle.Size = New System.Drawing.Size(157, 20)
-        Me.TxtCalle.TabIndex = 94
+        Me.TxtCalle.TabIndex = 15
         '
         'Label18
         '
@@ -298,7 +298,7 @@ Partial Class FormClientes
         Me.TxtTel.MaxLength = 10
         Me.TxtTel.Name = "TxtTel"
         Me.TxtTel.Size = New System.Drawing.Size(157, 20)
-        Me.TxtTel.TabIndex = 92
+        Me.TxtTel.TabIndex = 10
         '
         'Label17
         '
@@ -315,7 +315,7 @@ Partial Class FormClientes
         Me.Textemail.MaxLength = 60
         Me.Textemail.Name = "Textemail"
         Me.Textemail.Size = New System.Drawing.Size(157, 20)
-        Me.Textemail.TabIndex = 90
+        Me.Textemail.TabIndex = 9
         '
         'Label16
         '
@@ -344,7 +344,7 @@ Partial Class FormClientes
         Me.ComboBoxSex.Location = New System.Drawing.Point(144, 271)
         Me.ComboBoxSex.Name = "ComboBoxSex"
         Me.ComboBoxSex.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBoxSex.TabIndex = 87
+        Me.ComboBoxSex.TabIndex = 8
         '
         'TxtCurp
         '
@@ -352,7 +352,7 @@ Partial Class FormClientes
         Me.TxtCurp.MaxLength = 18
         Me.TxtCurp.Name = "TxtCurp"
         Me.TxtCurp.Size = New System.Drawing.Size(157, 20)
-        Me.TxtCurp.TabIndex = 86
+        Me.TxtCurp.TabIndex = 6
         '
         'Label14
         '
@@ -369,7 +369,7 @@ Partial Class FormClientes
         Me.TxtRFC.MaxLength = 13
         Me.TxtRFC.Name = "TxtRFC"
         Me.TxtRFC.Size = New System.Drawing.Size(157, 20)
-        Me.TxtRFC.TabIndex = 84
+        Me.TxtRFC.TabIndex = 5
         '
         'Label13
         '
@@ -404,7 +404,7 @@ Partial Class FormClientes
         Me.txtNombre.MaxLength = 30
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(157, 20)
-        Me.txtNombre.TabIndex = 53
+        Me.txtNombre.TabIndex = 2
         '
         'Label3
         '
@@ -421,7 +421,7 @@ Partial Class FormClientes
         Me.txtPaterno.MaxLength = 30
         Me.txtPaterno.Name = "txtPaterno"
         Me.txtPaterno.Size = New System.Drawing.Size(157, 20)
-        Me.txtPaterno.TabIndex = 55
+        Me.txtPaterno.TabIndex = 3
         '
         'Label4
         '
@@ -437,8 +437,9 @@ Partial Class FormClientes
         Me.txtIdCliente.Location = New System.Drawing.Point(144, 19)
         Me.txtIdCliente.MaxLength = 3
         Me.txtIdCliente.Name = "txtIdCliente"
+        Me.txtIdCliente.ReadOnly = True
         Me.txtIdCliente.Size = New System.Drawing.Size(157, 20)
-        Me.txtIdCliente.TabIndex = 51
+        Me.txtIdCliente.TabIndex = 1
         '
         'txtMaterno
         '
@@ -446,7 +447,7 @@ Partial Class FormClientes
         Me.txtMaterno.MaxLength = 30
         Me.txtMaterno.Name = "txtMaterno"
         Me.txtMaterno.Size = New System.Drawing.Size(157, 20)
-        Me.txtMaterno.TabIndex = 57
+        Me.txtMaterno.TabIndex = 4
         '
         'ComboBoxCo
         '
@@ -457,7 +458,7 @@ Partial Class FormClientes
         Me.ComboBoxCo.Location = New System.Drawing.Point(144, 495)
         Me.ComboBoxCo.Name = "ComboBoxCo"
         Me.ComboBoxCo.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBoxCo.TabIndex = 65
+        Me.ComboBoxCo.TabIndex = 14
         '
         'ComboBoxCiudad
         '
@@ -468,7 +469,7 @@ Partial Class FormClientes
         Me.ComboBoxCiudad.Location = New System.Drawing.Point(144, 456)
         Me.ComboBoxCiudad.Name = "ComboBoxCiudad"
         Me.ComboBoxCiudad.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBoxCiudad.TabIndex = 63
+        Me.ComboBoxCiudad.TabIndex = 13
         '
         'ComboBoxEstad
         '
@@ -479,7 +480,7 @@ Partial Class FormClientes
         Me.ComboBoxEstad.Location = New System.Drawing.Point(144, 417)
         Me.ComboBoxEstad.Name = "ComboBoxEstad"
         Me.ComboBoxEstad.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBoxEstad.TabIndex = 61
+        Me.ComboBoxEstad.TabIndex = 12
         '
         'Label7
         '
@@ -499,7 +500,7 @@ Partial Class FormClientes
         Me.ComboBoxPais.Location = New System.Drawing.Point(144, 381)
         Me.ComboBoxPais.Name = "ComboBoxPais"
         Me.ComboBoxPais.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBoxPais.TabIndex = 59
+        Me.ComboBoxPais.TabIndex = 11
         '
         'Label8
         '

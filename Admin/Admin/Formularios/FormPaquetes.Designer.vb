@@ -187,7 +187,7 @@ Partial Class FormPaquetes
         Me.dgvPaquetes.AllowUserToDeleteRows = False
         Me.dgvPaquetes.AllowUserToOrderColumns = True
         Me.dgvPaquetes.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgvPaquetes.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPaquetes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize

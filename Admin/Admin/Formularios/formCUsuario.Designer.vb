@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class formCUsuario
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class formCUsuario
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.gbUsr = New System.Windows.Forms.GroupBox()
@@ -342,6 +342,7 @@ Partial Class formCUsuario
         Me.txtId.Location = New System.Drawing.Point(144, 19)
         Me.txtId.MaxLength = 3
         Me.txtId.Name = "txtId"
+        Me.txtId.ReadOnly = True
         Me.txtId.Size = New System.Drawing.Size(157, 20)
         Me.txtId.TabIndex = 51
         '
@@ -552,16 +553,15 @@ Partial Class formCUsuario
         Me.dgvUsuarios.AllowUserToAddRows = False
         Me.dgvUsuarios.AllowUserToDeleteRows = False
         Me.dgvUsuarios.AllowUserToOrderColumns = True
-        Me.dgvUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvUsuarios.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dgvUsuarios.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvUsuarios.Location = New System.Drawing.Point(523, 77)
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.ReadOnly = True
         Me.dgvUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.dgvUsuarios.Size = New System.Drawing.Size(552, 496)
+        Me.dgvUsuarios.Size = New System.Drawing.Size(671, 500)
         Me.dgvUsuarios.TabIndex = 100
         '
         'btnCancelar

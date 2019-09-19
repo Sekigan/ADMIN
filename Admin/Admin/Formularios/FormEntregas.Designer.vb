@@ -220,8 +220,8 @@ Partial Class FormEntregas
         Me.dgvEntregas.AllowUserToAddRows = False
         Me.dgvEntregas.AllowUserToDeleteRows = False
         Me.dgvEntregas.AllowUserToOrderColumns = True
-        Me.dgvEntregas.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvEntregas.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgvEntregas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize

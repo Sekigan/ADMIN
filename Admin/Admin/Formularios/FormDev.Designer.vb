@@ -244,7 +244,7 @@ Partial Class FormDev
         Me.dgvDev.AllowUserToDeleteRows = False
         Me.dgvDev.AllowUserToOrderColumns = True
         Me.dgvDev.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.dgvDev.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvDev.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgvDev.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvDev.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvDev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize

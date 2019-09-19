@@ -2,6 +2,7 @@
 
     Dim met As New Metodos
     Private Sub FormCientes_Loader(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtIdCliente.Text = contar()
         muestra(dgvClientes, "select CLIENTES.ID_CLIENTE as ID_CLIENTE,
 	 CLIENTES.NOMBRE as NOMBRE,
 	 CLIENTES.PATERNO as PATERNO,
@@ -135,12 +136,14 @@ where   clientes.id_pais = colonias.id_pais and
 
                 MessageBox.Show("CLIENTE INGRESADO")
                 met.LimpiarCamposG(gbUsr)
+
             Catch er As Exception
                 MsgBox("Verifica que la informacion sea la correcta", vbInformation)
             End Try
         Else
             MsgBox("EL ID YA EXISTE..")
         End If
+        txtIdCliente.Text = contar()
         muestra(dgvClientes, "select CLIENTES.ID_CLIENTE as ID_CLIENTE,
 	 CLIENTES.NOMBRE as NOMBRE,
 	 CLIENTES.PATERNO as PATERNO,
@@ -192,7 +195,7 @@ where   clientes.id_pais = colonias.id_pais and
             MsgBox("No se puede eliminar este registro", vbInformation, "Precaución")
         End Try
         met.LimpiarCamposG(gbUsr)
-
+        txtIdCliente.Text = contar()
         muestra(dgvClientes, "select CLIENTES.ID_CLIENTE as ID_CLIENTE,
 	 CLIENTES.NOMBRE as NOMBRE,
 	 CLIENTES.PATERNO as PATERNO,
@@ -255,7 +258,7 @@ where   clientes.id_pais = colonias.id_pais and
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
+        txtIdCliente.Text = contar()
         met.LimpiarCamposG(gbUsr)
     End Sub
 
@@ -268,28 +271,31 @@ where   clientes.id_pais = colonias.id_pais and
         Else
             Sex = "M"
         End If
-
-        Insert = "update clientes set id_cliente=" & txtIdCliente.Text & ",id_pais = " &
+        Try
+            Insert = "update clientes set id_cliente=" & txtIdCliente.Text & ",id_pais = " &
                      ComboBoxPais.SelectedValue & ", id_estado = " &
                     ComboBoxEstad.SelectedValue & ",id_ciudad =" &
                     ComboBoxCiudad.SelectedValue & ",id_colonia =" &
-                    ComboBoxCo.SelectedValue & ", nombre =
-                    '" & txtNombre.Text & "', paterno ='" &
-                        txtPaterno.Text & "',materno ='" &
-                        txtMaterno.Text & "',rfc='" &
-                        TxtRFC.Text & "',curp ='" &
-                        TxtCurp.Text & "','edad=" &
-                        TxtEdad.Text & "',sexo'" &
+                    ComboBoxCo.SelectedValue & ", nombre ='" &
+                    txtNombre.Text & "', paterno ='" &
+                    txtPaterno.Text & "',materno ='" &
+                    txtMaterno.Text & "',edad=" & TxtEdad.Text &
+                    ",rfc='" & TxtRFC.Text & "',curp ='" &
+                        TxtCurp.Text & "',sexo='" &
             Sex & "',correo ='" &
             Textemail.Text & "',telefono=" &
             TxtTel.Text & ",numerocasa=" &
             TxtNcasa.Text & ",calle='" &
-            TxtCalle.Text & "' where id_clientes " & txtIdCliente.Text & ")"
+            TxtCalle.Text & "' where id_cliente=" & txtIdCliente.Text
 
-        met.realizarQuery(Insert)
-        MessageBox.Show("CLIENTE ACTUALIZADO")
-        met.LimpiarCamposG(gbUsr)
+            met.realizarQuery(Insert)
+            MessageBox.Show("CLIENTE ACTUALIZADO")
+            met.LimpiarCamposG(gbUsr)
+        Catch ex As Exception
+            MsgBox("Verifica la informacion")
+        End Try
 
+        txtIdCliente.Text = contar()
         muestra(dgvClientes, "select CLIENTES.ID_CLIENTE as ID_CLIENTE,
 	 CLIENTES.NOMBRE as NOMBRE,
 	 CLIENTES.PATERNO as PATERNO,
@@ -383,4 +389,20 @@ where   clientes.id_pais = colonias.id_pais and
         End If
 
     End Function
+
+    Public Function contar() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM CLIENTES"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
+
+
+
+
+
+
+    End Function
+
 End Class

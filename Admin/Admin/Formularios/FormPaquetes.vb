@@ -1,7 +1,7 @@
 ﻿Public Class FormPaquetes
     Dim met As New Metodos
     Private Sub FormPaquetes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtIdPaquetes.Text = contar()
         muestra(dgvPaquetes, "Select paquetes.id_paquete as id_paquete,
 	paquetes.remitente as remitente,
 	paquetes.telefono_remitente as telefono_remitente,
@@ -115,6 +115,7 @@ where paquetes.id_cliente = clientes.id_cliente and
 
         End Try
         muestra(dgvPaquetes, "Select *from paquetes")
+        txtIdPaquetes.Text = contar()
 
     End Sub
     Private Sub dgvPaquetes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPaquetes.CellContentClick
@@ -141,6 +142,7 @@ where paquetes.id_cliente = clientes.id_cliente and
         met.LimpiarCamposG(GroupBox2)
 
         met.LimpiarCamposG(gbPaises)
+        txtIdPaquetes.Text = contar()
 
     End Sub
 
@@ -155,6 +157,7 @@ where paquetes.id_cliente = clientes.id_cliente and
         End Try
 
         muestra(dgvPaquetes, "Select *from paquetes")
+        txtIdPaquetes.Text = contar()
     End Sub
     Private Sub SoloNumerosSinPuntos_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPeso.KeyPress, txtIdPaquetes.KeyPress
         If Not (Char.IsNumber(e.KeyChar)) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
@@ -212,7 +215,18 @@ where paquetes.id_cliente = clientes.id_cliente and
 from PAQUETES, empleados, clientes
 where paquetes.id_cliente = clientes.id_cliente and 
       paquetes.id_empleado = empleados.id_empleado")
+        txtIdPaquetes.Text = contar()
     End Sub
+
+    Public Function contar() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM paquetes"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
+
+    End Function
 
 
 

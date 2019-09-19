@@ -203,6 +203,7 @@ Partial Class FormEntregas
         Me.txtID.Location = New System.Drawing.Point(142, 59)
         Me.txtID.MaxLength = 3
         Me.txtID.Name = "txtID"
+        Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(161, 20)
         Me.txtID.TabIndex = 3
         '

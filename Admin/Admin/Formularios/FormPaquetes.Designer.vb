@@ -242,6 +242,7 @@ Partial Class FormPaquetes
         '
         Me.txtIdPaquetes.Location = New System.Drawing.Point(142, 24)
         Me.txtIdPaquetes.Name = "txtIdPaquetes"
+        Me.txtIdPaquetes.ReadOnly = True
         Me.txtIdPaquetes.Size = New System.Drawing.Size(161, 20)
         Me.txtIdPaquetes.TabIndex = 2
         '

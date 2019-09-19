@@ -1,6 +1,7 @@
 ﻿Public Class FormEntregas
     Dim met As New Metodos
     Private Sub FormEntregas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtID.Text = contar()
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
 	entregas.fecha_entrega as fecha_entrega,
 	paquetes.id_paquete as id_paquete,
@@ -83,6 +84,7 @@ where entregas.id_paquete = paquetes.id_paquete and
 from ENTREGAS, empleados, paquetes
 where entregas.id_paquete = paquetes.id_paquete and
       entregas.id_empleado = empleados.id_empleado")
+        txtID.Text = contar()
     End Sub
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
@@ -97,6 +99,7 @@ where entregas.id_paquete = paquetes.id_paquete and
 from ENTREGAS, empleados, paquetes
 where entregas.id_paquete = paquetes.id_paquete and
       entregas.id_empleado = empleados.id_empleado")
+        txtID.Text = contar()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -107,11 +110,10 @@ where entregas.id_paquete = paquetes.id_paquete and
 from ENTREGAS, empleados, paquetes
 where entregas.id_paquete = paquetes.id_paquete and
       entregas.id_empleado = empleados.id_empleado")
+        txtID.Text = contar()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
 
-    End Sub
     Public Function Existe(ByVal id As Integer) As Boolean
 
         Dim xCnx As New Oracle
@@ -122,10 +124,10 @@ where entregas.id_paquete = paquetes.id_paquete and
 
         Dim count As Integer = xCnx.objetoScalar(nm)
         If count = 0 Then
-                Return False
-            Else
-                Return True
-            End If
+            Return False
+        Else
+            Return True
+        End If
 
     End Function
     Public Function Existe1(ByVal id As Integer) As Boolean
@@ -142,6 +144,16 @@ where entregas.id_paquete = paquetes.id_paquete and
         Else
             Return True
         End If
+
+    End Function
+
+    Public Function contar() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM entregas"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
 
     End Function
 

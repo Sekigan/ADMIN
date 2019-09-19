@@ -365,7 +365,7 @@ where   clientes.id_pais = colonias.id_pais and
         poblarComboBox(ComboBoxEstad, "SELECT * FROM COLONIAS WHERE ID_PAIS=" & ComboBoxPais.SelectedValue & " AND ID_ESTADO=" & ComboBoxEstad.SelectedValue & "AND ID_CIUDAD=" & ComboBoxCiudad.SelectedValue, "ID_COLONIA", "NOMBRE")
 
     End Sub
-    Private Sub SoloNumerosSinPuntos_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtTel.KeyPress, TxtNcasa.KeyPress
+    Private Sub SoloNumerosSinPuntos_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtTel.KeyPress, TxtNcasa.KeyPress, TxtEdad.KeyPress
         If Not (Char.IsNumber(e.KeyChar)) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
 
             e.Handled = True
@@ -398,11 +398,7 @@ where   clientes.id_pais = colonias.id_pais and
 
         Return c + 1
 
-
-
-
-
-
     End Function
+
 
 End Class

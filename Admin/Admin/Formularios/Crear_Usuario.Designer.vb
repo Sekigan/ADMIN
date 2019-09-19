@@ -284,6 +284,7 @@ Partial Class CrearUsuarioLOGIN
         Me.txtId.Location = New System.Drawing.Point(144, 19)
         Me.txtId.MaxLength = 3
         Me.txtId.Name = "txtId"
+        Me.txtId.ReadOnly = True
         Me.txtId.Size = New System.Drawing.Size(157, 20)
         Me.txtId.TabIndex = 51
         '

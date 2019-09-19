@@ -94,9 +94,9 @@ Partial Class formCUsuario
         '
         Me.gbUsr.Controls.Add(Me.TxtAnteriorContra)
         Me.gbUsr.Controls.Add(Me.LabContraAnte)
-        Me.gbUsr.Controls.Add(Me.ChBoxCambiarContra)
         Me.gbUsr.Controls.Add(Me.txtnCa)
         Me.gbUsr.Controls.Add(Me.Label19)
+        Me.gbUsr.Controls.Add(Me.ChBoxCambiarContra)
         Me.gbUsr.Controls.Add(Me.txtca)
         Me.gbUsr.Controls.Add(Me.Label18)
         Me.gbUsr.Controls.Add(Me.txttef)
@@ -138,7 +138,7 @@ Partial Class formCUsuario
         '
         'TxtAnteriorContra
         '
-        Me.TxtAnteriorContra.Location = New System.Drawing.Point(144, 588)
+        Me.TxtAnteriorContra.Location = New System.Drawing.Point(140, 659)
         Me.TxtAnteriorContra.Name = "TxtAnteriorContra"
         Me.TxtAnteriorContra.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtAnteriorContra.Size = New System.Drawing.Size(161, 20)
@@ -147,7 +147,7 @@ Partial Class formCUsuario
         'LabContraAnte
         '
         Me.LabContraAnte.AutoSize = True
-        Me.LabContraAnte.Location = New System.Drawing.Point(19, 591)
+        Me.LabContraAnte.Location = New System.Drawing.Point(15, 662)
         Me.LabContraAnte.Name = "LabContraAnte"
         Me.LabContraAnte.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.LabContraAnte.Size = New System.Drawing.Size(100, 13)
@@ -157,7 +157,7 @@ Partial Class formCUsuario
         'ChBoxCambiarContra
         '
         Me.ChBoxCambiarContra.AutoSize = True
-        Me.ChBoxCambiarContra.Location = New System.Drawing.Point(25, 567)
+        Me.ChBoxCambiarContra.Location = New System.Drawing.Point(21, 638)
         Me.ChBoxCambiarContra.Name = "ChBoxCambiarContra"
         Me.ChBoxCambiarContra.Size = New System.Drawing.Size(115, 17)
         Me.ChBoxCambiarContra.TabIndex = 97
@@ -368,7 +368,7 @@ Partial Class formCUsuario
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 616)
+        Me.Label6.Location = New System.Drawing.Point(20, 577)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(61, 13)
         Me.Label6.TabIndex = 60
@@ -387,7 +387,7 @@ Partial Class formCUsuario
         '
         'txtContraseña
         '
-        Me.txtContraseña.Location = New System.Drawing.Point(144, 616)
+        Me.txtContraseña.Location = New System.Drawing.Point(144, 577)
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.Size = New System.Drawing.Size(161, 20)
@@ -436,7 +436,7 @@ Partial Class formCUsuario
         '
         'txtConfirmar
         '
-        Me.txtConfirmar.Location = New System.Drawing.Point(144, 649)
+        Me.txtConfirmar.Location = New System.Drawing.Point(144, 610)
         Me.txtConfirmar.MaxLength = 20
         Me.txtConfirmar.Name = "txtConfirmar"
         Me.txtConfirmar.Size = New System.Drawing.Size(161, 20)
@@ -455,7 +455,7 @@ Partial Class formCUsuario
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(16, 652)
+        Me.Label11.Location = New System.Drawing.Point(16, 613)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(108, 13)
         Me.Label11.TabIndex = 74

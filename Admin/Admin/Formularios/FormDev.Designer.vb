@@ -196,6 +196,7 @@ Partial Class FormDev
         Me.txtIDDev.Location = New System.Drawing.Point(142, 59)
         Me.txtIDDev.MaxLength = 3
         Me.txtIDDev.Name = "txtIDDev"
+        Me.txtIDDev.ReadOnly = True
         Me.txtIDDev.Size = New System.Drawing.Size(161, 20)
         Me.txtIDDev.TabIndex = 3
         '

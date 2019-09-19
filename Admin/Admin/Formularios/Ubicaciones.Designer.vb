@@ -558,6 +558,7 @@ Partial Class Ubicaciones
         '
         Me.txtID_C.Location = New System.Drawing.Point(142, 24)
         Me.txtID_C.Name = "txtID_C"
+        Me.txtID_C.ReadOnly = True
         Me.txtID_C.Size = New System.Drawing.Size(161, 20)
         Me.txtID_C.TabIndex = 25
         '
@@ -695,6 +696,7 @@ Partial Class Ubicaciones
         '
         Me.txtID_E.Location = New System.Drawing.Point(142, 24)
         Me.txtID_E.Name = "txtID_E"
+        Me.txtID_E.ReadOnly = True
         Me.txtID_E.Size = New System.Drawing.Size(161, 20)
         Me.txtID_E.TabIndex = 17
         '
@@ -769,6 +771,7 @@ Partial Class Ubicaciones
         '
         Me.txtIdPais.Location = New System.Drawing.Point(142, 24)
         Me.txtIdPais.Name = "txtIdPais"
+        Me.txtIdPais.ReadOnly = True
         Me.txtIdPais.Size = New System.Drawing.Size(161, 20)
         Me.txtIdPais.TabIndex = 2
         '

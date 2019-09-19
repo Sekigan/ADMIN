@@ -9,6 +9,11 @@ Public Class Ubicaciones
     Dim met As New Metodos
 
     Private Sub Ubicaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtIdPais.Text=contarPaises()
+        txtID_E.Text = contarEstad()
+        txtID_C.Text = contarCiudades()
+        txtID_CO.Text = contarco()
+
         'Paises
         muestra(dgvPaises, "SELECT * FROM PAISES")
 
@@ -66,6 +71,7 @@ Public Class Ubicaciones
         poblarComboBox(CBoxPaisesE, "SELECT * FROM PAISES ", "ID_PAIS", "NOMBRE")
         poblarComboBox(CBoxPaisCiudades, "Select * From PAISES", "ID_PAIS", "NOMBRE")
         poblarComboBox(CBoxPaisesCol, "Select * From PAISES", "ID_PAIS", "NOMBRE")
+        txtIdPais.Text = contarPaises()
 
     End Sub
     'Mostrar Pais
@@ -75,6 +81,8 @@ Public Class Ubicaciones
         poblarComboBox(CBoxPaisesE, "SELECT * FROM PAISES ", "ID_PAIS", "NOMBRE")
         poblarComboBox(CBoxPaisCiudades, "Select * From PAISES", "ID_PAIS", "NOMBRE")
         poblarComboBox(CBoxPaisesCol, "Select * From PAISES", "ID_PAIS", "NOMBRE")
+        txtIdPais.Text = contarPaises()
+
     End Sub
     'Update Pais
     Private Sub btnEP_Click(sender As Object, e As EventArgs) Handles btnEP.Click
@@ -96,6 +104,8 @@ Public Class Ubicaciones
         poblarComboBox(CBoxPaisesE, "SELECT * FROM PAISES ", "ID_PAIS", "NOMBRE")
         poblarComboBox(CBoxPaisCiudades, "Select * From PAISES", "ID_PAIS", "NOMBRE")
         poblarComboBox(CBoxPaisesCol, "Select * From PAISES", "ID_PAIS", "NOMBRE")
+        txtIdPais.Text = contarPaises()
+
     End Sub
     'Borrar pais
     Private Sub btnElP_Click(sender As Object, e As EventArgs) Handles btnElP.Click
@@ -113,6 +123,8 @@ Public Class Ubicaciones
         poblarComboBox(CBoxPaisesE, "SELECT * FROM PAISES ", "ID_PAIS", "NOMBRE")
         poblarComboBox(CBoxPaisCiudades, "Select * From PAISES", "ID_PAIS", "NOMBRE")
         poblarComboBox(CBoxPaisesCol, "Select * From PAISES", "ID_PAIS", "NOMBRE")
+        txtIdPais.Text = contarPaises()
+
     End Sub
     'Seleccionar pais desde el dgv
     Private Sub dgvPaises_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPaises.CellContentClick
@@ -147,6 +159,9 @@ Public Class Ubicaciones
         poblarComboBox(CBoxEstadosCiudades, "Select * From ESTADOS Where ID_PAIS = " & CBoxPaisCiudades.SelectedValue, "ID_ESTADO", "NOMBRE")
         poblarComboBox(CBoxEstadosCol, "Select * From ESTADOS Where ID_PAIS = " & CBoxPaisesCol.SelectedValue, "ID_ESTADO", "NOMBRE")
 
+        txtID_E.Text = contarEstad()
+
+
     End Sub
     'Insert Estado
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -169,6 +184,8 @@ Public Class Ubicaciones
         poblarComboBox(CBoxEstadosCiudades, "Select * From ESTADOS Where ID_PAIS = " & CBoxPaisCiudades.SelectedValue, "ID_ESTADO", "NOMBRE")
         poblarComboBox(CBoxEstadosCol, "Select * From ESTADOS Where ID_PAIS = " & CBoxPaisesCol.SelectedValue, "ID_ESTADO", "NOMBRE")
 
+        txtID_E.Text = contarEstad()
+
     End Sub
     'Update Estado
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -190,6 +207,8 @@ Public Class Ubicaciones
         poblarComboBox(CBoxEstadosCiudades, "Select * From ESTADOS Where ID_PAIS = " & CBoxPaisCiudades.SelectedValue, "ID_ESTADO", "NOMBRE")
         poblarComboBox(CBoxEstadosCol, "Select * From ESTADOS Where ID_PAIS = " & CBoxPaisesCol.SelectedValue, "ID_ESTADO", "NOMBRE")
 
+        txtID_E.Text = contarEstad()
+
     End Sub
     'Borrar estado
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -210,6 +229,8 @@ Public Class Ubicaciones
         met.LimpiarCamposG(gbEdo)
         poblarComboBox(CBoxEstadosCiudades, "Select * From ESTADOS Where ID_PAIS = " & CBoxPaisCiudades.SelectedValue, "ID_ESTADO", "NOMBRE")
         poblarComboBox(CBoxEstadosCol, "Select * From ESTADOS Where ID_PAIS = " & CBoxPaisesCol.SelectedValue, "ID_ESTADO", "NOMBRE")
+
+        txtID_E.Text = contarEstad()
 
     End Sub
     'Seleccionar ciudad desde el dgv
@@ -234,6 +255,7 @@ Where ciudades.id_pais = estados.id_pais And
       ciudades.id_pais = paises.id_pais And
       ciudades.id_estado = estados.id_estado")
         met.LimpiarCamposG(gbCiu)
+        txtID_C.Text = contarCiudades()
         poblarComboBox(CBoxCiudadesCol, "Select * From CIUDADES Where ID_PAIS = " & CBoxPaisesCol.SelectedValue & " And ID_ESTADO = " & CBoxEstadosCol.SelectedValue, "ID_CIUDAD", "NOMBRE")
     End Sub
     'Insert Ciudad
@@ -253,6 +275,8 @@ Where ciudades.id_pais = estados.id_pais And
       ciudades.id_estado = estados.id_estado")
         met.LimpiarCamposG(gbCiu)
         poblarComboBox(CBoxCiudadesCol, "Select * From CIUDADES Where ID_PAIS = " & CBoxPaisesCol.SelectedValue & " And ID_ESTADO = " & CBoxEstadosCol.SelectedValue, "ID_CIUDAD", "NOMBRE")
+        txtID_C.Text = contarCiudades()
+
     End Sub
     'Update Ciudad
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -272,6 +296,8 @@ Where ciudades.id_pais = estados.id_pais And
       ciudades.id_estado = estados.id_estado")
         met.LimpiarCamposG(gbCiu)
         poblarComboBox(CBoxCiudadesCol, "Select * From CIUDADES Where ID_PAIS = " & CBoxPaisesCol.SelectedValue & " And ID_ESTADO = " & CBoxEstadosCol.SelectedValue, "ID_CIUDAD", "NOMBRE")
+
+        txtID_C.Text = contarCiudades()
     End Sub
     'Borrar Ciudad
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -290,7 +316,10 @@ Where ciudades.id_pais = estados.id_pais And
       ciudades.id_pais = paises.id_pais And
       ciudades.id_estado = estados.id_estado")
         met.LimpiarCamposG(gbCiu)
+
         poblarComboBox(CBoxCiudadesCol, "Select * From CIUDADES Where ID_PAIS = " & CBoxPaisesCol.SelectedValue & " And ID_ESTADO = " & CBoxEstadosCol.SelectedValue, "ID_CIUDAD", "NOMBRE")
+        txtID_C.Text = contarCiudades()
+
     End Sub
     'Ver Colonias
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -302,6 +331,8 @@ where colonias.id_pais = ciudades.id_pais and
       colonias.id_estado = ciudades.id_estado and
       colonias.id_estado = estados.id_estado and
       colonias.id_ciudad = ciudades.id_ciudad")
+
+        txtID_CO.Text = contarco()
     End Sub
     'Seleccionar colonia desde dgv
     Private Sub dgvCol_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCol.CellContentClick
@@ -336,6 +367,8 @@ where colonias.id_pais = ciudades.id_pais and
       colonias.id_estado = estados.id_estado and
       colonias.id_ciudad = ciudades.id_ciudad")
         met.LimpiarCamposG(gbCol)
+
+        txtID_CO.Text = contarco()
     End Sub
     'Update Colonia
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -357,6 +390,8 @@ where colonias.id_pais = ciudades.id_pais and
       colonias.id_estado = estados.id_estado and
       colonias.id_ciudad = ciudades.id_ciudad")
         met.LimpiarCamposG(gbCol)
+
+        txtID_CO.Text = contarco()
     End Sub
     'Borrar colonia
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
@@ -379,6 +414,8 @@ where colonias.id_pais = ciudades.id_pais and
       colonias.id_estado = estados.id_estado and
       colonias.id_ciudad = ciudades.id_ciudad")
         met.LimpiarCamposG(gbCol)
+
+        txtID_CO.Text = contarco()
     End Sub
 
     Private Sub CBoxPaisCiudades_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBoxPaisCiudades.SelectionChangeCommitted
@@ -417,6 +454,43 @@ where colonias.id_pais = ciudades.id_pais and
             e.Handled = True
         End If
     End Sub
+
+    Public Function contarPaises() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM paises"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
+
+    End Function
+    Public Function contarEstad() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM estados"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
+
+    End Function
+    Public Function contarCiudades() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM ciudades"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
+
+    End Function
+    Public Function contarco() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM colonias"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
+
+    End Function
 
 End Class
 

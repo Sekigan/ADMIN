@@ -244,7 +244,7 @@ Partial Class FormClientes
         'TxtEdad
         '
         Me.TxtEdad.Location = New System.Drawing.Point(144, 245)
-        Me.TxtEdad.MaxLength = 3
+        Me.TxtEdad.MaxLength = 2
         Me.TxtEdad.Name = "TxtEdad"
         Me.TxtEdad.Size = New System.Drawing.Size(157, 20)
         Me.TxtEdad.TabIndex = 7

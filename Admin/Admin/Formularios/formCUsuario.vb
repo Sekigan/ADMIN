@@ -50,15 +50,11 @@
 
         ComboBoxC.Enabled = True
         poblarComboBox(ComboBoxC, "SELECT * FROM COLONIAS WHERE ID_PAIS=" & ComboBoxPais.SelectedValue & " AND ID_ESTADO=" & ComboBoxEstad.SelectedValue & " AND ID_CIUDAD=" & ComboBoxCiudad.SelectedValue, "ID_COLONIA", "NOMBRE")
-        Label11.Visible = False
+
         LabContraAnte.Visible = False
-        Label6.Visible = False
 
-        txtContraseña.Visible = False
-        txtContraseña.Text = ""
 
-        txtConfirmar.Visible = False
-        txtConfirmar.Text = ""
+
 
         TxtAnteriorContra.Visible = False
         TxtAnteriorContra.Text = ""
@@ -459,15 +455,11 @@ where   empleados.id_pais = colonias.id_pais and
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles ChBoxCambiarContra.CheckedChanged
         Dim sino As Boolean = ChBoxCambiarContra.Checked
 
-        Label11.Visible = sino
+
         LabContraAnte.Visible = sino
-        Label6.Visible = sino
 
-        txtContraseña.Visible = sino
-        txtContraseña.Text = ""
 
-        txtConfirmar.Visible = sino
-        txtConfirmar.Text = ""
+
 
         TxtAnteriorContra.Visible = sino
         TxtAnteriorContra.Text = ""

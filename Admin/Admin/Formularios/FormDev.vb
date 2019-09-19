@@ -1,6 +1,7 @@
 ﻿Public Class FormDev
     Dim met As New Metodos
     Private Sub FormDev_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtIDDev.Text = contar()
         muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
 	devoluciones.fecha_devolucion as Fecha_devolucion,
 	devoluciones.motivo as Motivo_devolucion,
@@ -53,7 +54,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
 	paquetes.id_paquete as id_paquete	
 from DEVOLUCIONES, paquetes
 where devoluciones.id_paquete = paquetes.id_paquete")
-
+        txtIDDev.Text = contar()
 
     End Sub
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
@@ -69,6 +70,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
 	paquetes.id_paquete as id_paquete	
 from DEVOLUCIONES, paquetes
 where devoluciones.id_paquete = paquetes.id_paquete")
+        txtIDDev.Text = contar()
     End Sub
 
     Private Sub dgvDev_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDev.CellContentClick
@@ -92,6 +94,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
 	paquetes.id_paquete as id_paquete	
 from DEVOLUCIONES, paquetes
 where devoluciones.id_paquete = paquetes.id_paquete")
+        txtIDDev.Text = contar()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -112,6 +115,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
 	paquetes.id_paquete as id_paquete	
        from DEVOLUCIONES, paquetes
         where devoluciones.id_paquete = paquetes.id_paquete")
+        txtIDDev.Text = contar()
     End Sub
 
     Public Function Existe(ByVal id As Integer) As Boolean
@@ -144,6 +148,16 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         Else
             Return True
         End If
+
+    End Function
+
+    Public Function contar() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM devoluciones"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
 
     End Function
 

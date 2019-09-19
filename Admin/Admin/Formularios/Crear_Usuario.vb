@@ -1,6 +1,8 @@
 ﻿Public Class CrearUsuarioLOGIN
 
     Private Sub CrearUsuarioLOGIN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        txtId.Text = contar()
         ComboBoxSex.DataSource = {"Femenino", "Masculino"}
 
         poblarComboBox(ComboBoxPais, "SELECT * FROM PAISES", "ID_PAIS", "NOMBRE")
@@ -125,6 +127,7 @@
             End Try
             Dim met As New Metodos
             met.LimpiarCamposG(gbUsr)
+            txtId.Text = contar()
         Else
             MsgBox("EL ID YA EXISTE...")
         End If
@@ -197,6 +200,16 @@
         Else
             Return True
         End If
+
+    End Function
+    Public Function contar() As Double
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT COUNT(*) FROM empleados"
+
+        Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Return c + 1
+
 
     End Function
 End Class

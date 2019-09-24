@@ -26,9 +26,9 @@ Partial Class formCUsuario
         Me.gbUsr = New System.Windows.Forms.GroupBox()
         Me.TxtAnteriorContra = New System.Windows.Forms.TextBox()
         Me.LabContraAnte = New System.Windows.Forms.Label()
-        Me.ChBoxCambiarContra = New System.Windows.Forms.CheckBox()
         Me.txtnCa = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.ChBoxCambiarContra = New System.Windows.Forms.CheckBox()
         Me.txtca = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txttef = New System.Windows.Forms.TextBox()
@@ -87,11 +87,12 @@ Partial Class formCUsuario
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1251, 970)
+        Me.Panel1.Size = New System.Drawing.Size(1206, 970)
         Me.Panel1.TabIndex = 0
         '
         'gbUsr
         '
+        Me.gbUsr.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.gbUsr.Controls.Add(Me.TxtAnteriorContra)
         Me.gbUsr.Controls.Add(Me.LabContraAnte)
         Me.gbUsr.Controls.Add(Me.txtnCa)
@@ -154,16 +155,6 @@ Partial Class formCUsuario
         Me.LabContraAnte.TabIndex = 99
         Me.LabContraAnte.Text = "Contraseña Anterior"
         '
-        'ChBoxCambiarContra
-        '
-        Me.ChBoxCambiarContra.AutoSize = True
-        Me.ChBoxCambiarContra.Location = New System.Drawing.Point(21, 638)
-        Me.ChBoxCambiarContra.Name = "ChBoxCambiarContra"
-        Me.ChBoxCambiarContra.Size = New System.Drawing.Size(115, 17)
-        Me.ChBoxCambiarContra.TabIndex = 97
-        Me.ChBoxCambiarContra.Text = "Nueva Contraseña"
-        Me.ChBoxCambiarContra.UseVisualStyleBackColor = True
-        '
         'txtnCa
         '
         Me.txtnCa.Location = New System.Drawing.Point(144, 544)
@@ -180,6 +171,16 @@ Partial Class formCUsuario
         Me.Label19.Size = New System.Drawing.Size(61, 13)
         Me.Label19.TabIndex = 95
         Me.Label19.Text = "N° de Casa"
+        '
+        'ChBoxCambiarContra
+        '
+        Me.ChBoxCambiarContra.AutoSize = True
+        Me.ChBoxCambiarContra.Location = New System.Drawing.Point(21, 638)
+        Me.ChBoxCambiarContra.Name = "ChBoxCambiarContra"
+        Me.ChBoxCambiarContra.Size = New System.Drawing.Size(115, 17)
+        Me.ChBoxCambiarContra.TabIndex = 97
+        Me.ChBoxCambiarContra.Text = "Nueva Contraseña"
+        Me.ChBoxCambiarContra.UseVisualStyleBackColor = True
         '
         'txtca
         '
@@ -339,6 +340,7 @@ Partial Class formCUsuario
         '
         'txtId
         '
+        Me.txtId.Enabled = False
         Me.txtId.Location = New System.Drawing.Point(144, 19)
         Me.txtId.MaxLength = 3
         Me.txtId.Name = "txtId"
@@ -472,6 +474,7 @@ Partial Class formCUsuario
         '
         'Label12
         '
+        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Trebuchet MS", 15.75!)
         Me.Label12.Location = New System.Drawing.Point(432, 31)
@@ -490,7 +493,7 @@ Partial Class formCUsuario
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(861, 613)
+        Me.Button2.Location = New System.Drawing.Point(839, 613)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(77, 23)
         Me.Button2.TabIndex = 103
@@ -507,7 +510,7 @@ Partial Class formCUsuario
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
-        Me.btnGuardar.Location = New System.Drawing.Point(561, 613)
+        Me.btnGuardar.Location = New System.Drawing.Point(539, 613)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 102
@@ -524,7 +527,7 @@ Partial Class formCUsuario
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(752, 615)
+        Me.Button3.Location = New System.Drawing.Point(730, 615)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 105
@@ -541,7 +544,7 @@ Partial Class formCUsuario
         Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(653, 615)
+        Me.btneliminar.Location = New System.Drawing.Point(631, 615)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
         Me.btneliminar.TabIndex = 104
@@ -557,7 +560,7 @@ Partial Class formCUsuario
         Me.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dgvUsuarios.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvUsuarios.Location = New System.Drawing.Point(523, 77)
+        Me.dgvUsuarios.Location = New System.Drawing.Point(478, 77)
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.ReadOnly = True
         Me.dgvUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
@@ -574,7 +577,7 @@ Partial Class formCUsuario
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(1021, 665)
+        Me.btnCancelar.Location = New System.Drawing.Point(999, 665)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 107
@@ -586,8 +589,8 @@ Partial Class formCUsuario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.AutoScrollMinSize = New System.Drawing.Size(1000, 970)
-        Me.ClientSize = New System.Drawing.Size(1268, 788)
+        Me.AutoScrollMinSize = New System.Drawing.Size(1200, 970)
+        Me.ClientSize = New System.Drawing.Size(1223, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "formCUsuario"

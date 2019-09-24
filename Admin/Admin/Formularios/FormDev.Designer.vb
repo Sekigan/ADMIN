@@ -29,6 +29,8 @@ Partial Class FormDev
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.gbPaises = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBoxPaquetes = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.datedev = New System.Windows.Forms.DateTimePicker()
@@ -60,7 +62,7 @@ Partial Class FormDev
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1070, 650)
+        Me.Panel1.Size = New System.Drawing.Size(1206, 970)
         Me.Panel1.TabIndex = 0
         '
         'Button2
@@ -73,7 +75,7 @@ Partial Class FormDev
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(603, 553)
+        Me.Button2.Location = New System.Drawing.Point(662, 758)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 119
@@ -90,7 +92,7 @@ Partial Class FormDev
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(512, 553)
+        Me.Button1.Location = New System.Drawing.Point(571, 758)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 118
@@ -107,7 +109,7 @@ Partial Class FormDev
         Me.Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Ver.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ver.ForeColor = System.Drawing.Color.Black
-        Me.Ver.Location = New System.Drawing.Point(417, 553)
+        Me.Ver.Location = New System.Drawing.Point(476, 758)
         Me.Ver.Name = "Ver"
         Me.Ver.Size = New System.Drawing.Size(75, 23)
         Me.Ver.TabIndex = 121
@@ -124,7 +126,7 @@ Partial Class FormDev
         Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(693, 553)
+        Me.btneliminar.Location = New System.Drawing.Point(752, 758)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
         Me.btneliminar.TabIndex = 120
@@ -141,7 +143,7 @@ Partial Class FormDev
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(911, 581)
+        Me.btnCancelar.Location = New System.Drawing.Point(970, 786)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 122
@@ -150,7 +152,8 @@ Partial Class FormDev
         '
         'gbPaises
         '
-        Me.gbPaises.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.gbPaises.Controls.Add(Me.ComboBox1)
+        Me.gbPaises.Controls.Add(Me.Label6)
         Me.gbPaises.Controls.Add(Me.ComboBoxPaquetes)
         Me.gbPaises.Controls.Add(Me.Label4)
         Me.gbPaises.Controls.Add(Me.datedev)
@@ -158,12 +161,30 @@ Partial Class FormDev
         Me.gbPaises.Controls.Add(Me.Label3)
         Me.gbPaises.Controls.Add(Me.Label2)
         Me.gbPaises.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbPaises.Location = New System.Drawing.Point(37, 85)
+        Me.gbPaises.Location = New System.Drawing.Point(105, 245)
         Me.gbPaises.Name = "gbPaises"
-        Me.gbPaises.Size = New System.Drawing.Size(345, 149)
+        Me.gbPaises.Size = New System.Drawing.Size(345, 187)
         Me.gbPaises.TabIndex = 113
         Me.gbPaises.TabStop = False
         Me.gbPaises.Text = "Paquete"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(142, 91)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(161, 24)
+        Me.ComboBox1.TabIndex = 124
+        '
+        'Label6
+        '
+        Me.Label6.Location = New System.Drawing.Point(16, 91)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(97, 37)
+        Me.Label6.TabIndex = 123
+        Me.Label6.Text = "Empleado que hizo la devolucion"
         '
         'ComboBoxPaquetes
         '
@@ -177,7 +198,7 @@ Partial Class FormDev
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(38, 108)
+        Me.Label4.Location = New System.Drawing.Point(18, 146)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(38, 16)
         Me.Label4.TabIndex = 115
@@ -186,7 +207,7 @@ Partial Class FormDev
         'datedev
         '
         Me.datedev.Enabled = False
-        Me.datedev.Location = New System.Drawing.Point(96, 104)
+        Me.datedev.Location = New System.Drawing.Point(96, 142)
         Me.datedev.Name = "datedev"
         Me.datedev.Size = New System.Drawing.Size(207, 20)
         Me.datedev.TabIndex = 114
@@ -203,7 +224,7 @@ Partial Class FormDev
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(38, 63)
+        Me.Label3.Location = New System.Drawing.Point(16, 62)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 16)
         Me.Label3.TabIndex = 1
@@ -220,10 +241,9 @@ Partial Class FormDev
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.Controls.Add(Me.txtMotivo)
         Me.GroupBox1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(37, 278)
+        Me.GroupBox1.Location = New System.Drawing.Point(105, 485)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(345, 109)
         Me.GroupBox1.TabIndex = 112
@@ -244,12 +264,12 @@ Partial Class FormDev
         Me.dgvDev.AllowUserToAddRows = False
         Me.dgvDev.AllowUserToDeleteRows = False
         Me.dgvDev.AllowUserToOrderColumns = True
-        Me.dgvDev.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.dgvDev.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvDev.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgvDev.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvDev.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvDev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDev.Location = New System.Drawing.Point(417, 85)
+        Me.dgvDev.Location = New System.Drawing.Point(485, 245)
         Me.dgvDev.Name = "dgvDev"
         Me.dgvDev.ReadOnly = True
         Me.dgvDev.Size = New System.Drawing.Size(598, 432)
@@ -257,6 +277,7 @@ Partial Class FormDev
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(457, 41)
@@ -269,7 +290,9 @@ Partial Class FormDev
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1070, 650)
+        Me.AutoScroll = True
+        Me.AutoScrollMinSize = New System.Drawing.Size(1200, 970)
+        Me.ClientSize = New System.Drawing.Size(1223, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormDev"
@@ -301,4 +324,6 @@ Partial Class FormDev
     Friend WithEvents btneliminar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents ComboBoxPaquetes As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

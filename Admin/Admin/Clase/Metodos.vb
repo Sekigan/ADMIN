@@ -38,11 +38,16 @@
         xCnx.objetoCommand(consulta)
         cnx.Close()
     End Sub
-    Public Sub precioPaq(ByVal peso As String)
+    Public Sub precioPaq(ByVal peso As Double)
 
         preciop = 10 * peso
 
     End Sub
+    Public Sub realizarConsulta(ByVal consulta As String)
+        Dim xCnx As New Oracle
 
+        xCnx.objetoScalar(consulta)
+        cnx.Close()
+    End Sub
 
 End Class

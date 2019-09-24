@@ -65,6 +65,7 @@ Partial Class FormClientes
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbUsr.SuspendLayout()
@@ -72,7 +73,9 @@ Partial Class FormClientes
         '
         'Panel1
         '
+        Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.btnAgregar)
@@ -84,7 +87,7 @@ Partial Class FormClientes
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1070, 650)
+        Me.Panel1.Size = New System.Drawing.Size(1211, 970)
         Me.Panel1.TabIndex = 0
         '
         'Label12
@@ -107,7 +110,7 @@ Partial Class FormClientes
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(648, 573)
+        Me.Button2.Location = New System.Drawing.Point(635, 615)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 18
@@ -124,7 +127,7 @@ Partial Class FormClientes
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Black
-        Me.btnAgregar.Location = New System.Drawing.Point(557, 573)
+        Me.btnAgregar.Location = New System.Drawing.Point(544, 615)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregar.TabIndex = 17
@@ -141,7 +144,7 @@ Partial Class FormClientes
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(831, 573)
+        Me.Button3.Location = New System.Drawing.Point(818, 615)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 20
@@ -158,7 +161,7 @@ Partial Class FormClientes
         Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(738, 573)
+        Me.btneliminar.Location = New System.Drawing.Point(725, 615)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
         Me.btneliminar.TabIndex = 19
@@ -175,10 +178,10 @@ Partial Class FormClientes
         Me.dgvClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvClientes.Location = New System.Drawing.Point(462, 45)
+        Me.dgvClientes.Location = New System.Drawing.Point(534, 82)
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.ReadOnly = True
-        Me.dgvClientes.Size = New System.Drawing.Size(552, 496)
+        Me.dgvClientes.Size = New System.Drawing.Size(614, 495)
         Me.dgvClientes.TabIndex = 109
         '
         'btnCancelar
@@ -191,7 +194,7 @@ Partial Class FormClientes
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(956, 601)
+        Me.btnCancelar.Location = New System.Drawing.Point(1057, 657)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 21
@@ -235,7 +238,7 @@ Partial Class FormClientes
         Me.gbUsr.Controls.Add(Me.Label11)
         Me.gbUsr.Controls.Add(Me.Label10)
         Me.gbUsr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.gbUsr.Location = New System.Drawing.Point(54, 45)
+        Me.gbUsr.Location = New System.Drawing.Point(70, 69)
         Me.gbUsr.Name = "gbUsr"
         Me.gbUsr.Size = New System.Drawing.Size(324, 593)
         Me.gbUsr.TabIndex = 115
@@ -434,6 +437,7 @@ Partial Class FormClientes
         '
         'txtIdCliente
         '
+        Me.txtIdCliente.Enabled = False
         Me.txtIdCliente.Location = New System.Drawing.Point(144, 19)
         Me.txtIdCliente.MaxLength = 3
         Me.txtIdCliente.Name = "txtIdCliente"
@@ -546,13 +550,24 @@ Partial Class FormClientes
         Me.Label10.TabIndex = 71
         Me.Label10.Text = "Colonia"
         '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(483, 27)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(83, 25)
+        Me.Label6.TabIndex = 124
+        Me.Label6.Text = "Clientes"
+        '
         'FormClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.AutoScrollMargin = New System.Drawing.Size(0, 200)
-        Me.ClientSize = New System.Drawing.Size(1070, 650)
+        Me.AutoScrollMinSize = New System.Drawing.Size(1000, 970)
+        Me.ClientSize = New System.Drawing.Size(1228, 615)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormClientes"
@@ -610,4 +625,5 @@ Partial Class FormClientes
     Friend WithEvents Label10 As Label
     Friend WithEvents TxtEdad As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

@@ -23,6 +23,10 @@ Partial Class FormPaquetes
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Editar = New System.Windows.Forms.Button()
         Me.DateToday = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -46,7 +50,12 @@ Partial Class FormPaquetes
         Me.ChBoxNuevoCliente = New System.Windows.Forms.CheckBox()
         Me.CBoxCliente = New System.Windows.Forms.ComboBox()
         Me.ChBoxCliente = New System.Windows.Forms.CheckBox()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvPaquetes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -56,6 +65,10 @@ Partial Class FormPaquetes
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.DataGridView2)
+        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Editar)
         Me.Panel1.Controls.Add(Me.DateToday)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -74,8 +87,56 @@ Partial Class FormPaquetes
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1200, 970)
+        Me.Panel1.Size = New System.Drawing.Size(1240, 970)
         Me.Panel1.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(824, 121)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(204, 39)
+        Me.Label5.TabIndex = 131
+        Me.Label5.Text = "*Color verde paquete entregado" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "*Color rojo paquete devuelto " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "*Color blanco paqu" &
+    "ete sin entregar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Enabled = False
+        Me.DataGridView2.Location = New System.Drawing.Point(375, 773)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView2.TabIndex = 130
+        Me.DataGridView2.Visible = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Enabled = False
+        Me.DataGridView1.Location = New System.Drawing.Point(69, 774)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 129
+        Me.DataGridView1.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button1.BackColor = System.Drawing.Color.Silver
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(496, 741)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 128
+        Me.Button1.Text = "Imprimir"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Editar
         '
@@ -87,7 +148,7 @@ Partial Class FormPaquetes
         Me.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Editar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Editar.ForeColor = System.Drawing.Color.Black
-        Me.Editar.Location = New System.Drawing.Point(559, 698)
+        Me.Editar.Location = New System.Drawing.Point(579, 698)
         Me.Editar.Name = "Editar"
         Me.Editar.Size = New System.Drawing.Size(75, 23)
         Me.Editar.TabIndex = 127
@@ -123,7 +184,7 @@ Partial Class FormPaquetes
         Me.btnAgrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgrega.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgrega.ForeColor = System.Drawing.Color.Black
-        Me.btnAgrega.Location = New System.Drawing.Point(475, 697)
+        Me.btnAgrega.Location = New System.Drawing.Point(495, 697)
         Me.btnAgrega.Name = "btnAgrega"
         Me.btnAgrega.Size = New System.Drawing.Size(75, 23)
         Me.btnAgrega.TabIndex = 118
@@ -140,7 +201,7 @@ Partial Class FormPaquetes
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(733, 698)
+        Me.Button3.Location = New System.Drawing.Point(753, 698)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 121
@@ -157,7 +218,7 @@ Partial Class FormPaquetes
         Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(647, 698)
+        Me.btneliminar.Location = New System.Drawing.Point(667, 698)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
         Me.btneliminar.TabIndex = 120
@@ -174,7 +235,7 @@ Partial Class FormPaquetes
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(1017, 765)
+        Me.btnCancelar.Location = New System.Drawing.Point(1037, 765)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 122
@@ -186,12 +247,12 @@ Partial Class FormPaquetes
         Me.dgvPaquetes.AllowUserToAddRows = False
         Me.dgvPaquetes.AllowUserToDeleteRows = False
         Me.dgvPaquetes.AllowUserToOrderColumns = True
-        Me.dgvPaquetes.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.dgvPaquetes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgvPaquetes.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPaquetes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPaquetes.Location = New System.Drawing.Point(475, 183)
+        Me.dgvPaquetes.Location = New System.Drawing.Point(513, 183)
         Me.dgvPaquetes.Name = "dgvPaquetes"
         Me.dgvPaquetes.ReadOnly = True
         Me.dgvPaquetes.Size = New System.Drawing.Size(617, 472)
@@ -199,7 +260,8 @@ Partial Class FormPaquetes
         '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Costo)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtPeso)
@@ -207,15 +269,16 @@ Partial Class FormPaquetes
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(52, 218)
+        Me.GroupBox2.Location = New System.Drawing.Point(53, 218)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(336, 129)
+        Me.GroupBox2.Size = New System.Drawing.Size(336, 162)
         Me.GroupBox2.TabIndex = 97
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Paquete Info"
         '
         'Costo
         '
+        Me.Costo.Enabled = False
         Me.Costo.Location = New System.Drawing.Point(142, 93)
         Me.Costo.Name = "Costo"
         Me.Costo.ReadOnly = True
@@ -234,12 +297,15 @@ Partial Class FormPaquetes
         'txtPeso
         '
         Me.txtPeso.Location = New System.Drawing.Point(142, 59)
+        Me.txtPeso.MaxLength = 3
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(161, 20)
         Me.txtPeso.TabIndex = 3
         '
         'txtIdPaquetes
         '
+        Me.txtIdPaquetes.Enabled = False
+        Me.txtIdPaquetes.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIdPaquetes.Location = New System.Drawing.Point(142, 24)
         Me.txtIdPaquetes.Name = "txtIdPaquetes"
         Me.txtIdPaquetes.ReadOnly = True
@@ -266,10 +332,9 @@ Partial Class FormPaquetes
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.GroupBox1.Controls.Add(Me.Contenido)
         Me.GroupBox1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(52, 386)
+        Me.GroupBox1.Location = New System.Drawing.Point(53, 386)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(336, 109)
         Me.GroupBox1.TabIndex = 96
@@ -287,10 +352,9 @@ Partial Class FormPaquetes
         '
         'gbPaises
         '
-        Me.gbPaises.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.gbPaises.Controls.Add(Me.Observa)
         Me.gbPaises.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbPaises.Location = New System.Drawing.Point(52, 527)
+        Me.gbPaises.Location = New System.Drawing.Point(53, 527)
         Me.gbPaises.Name = "gbPaises"
         Me.gbPaises.Size = New System.Drawing.Size(336, 128)
         Me.gbPaises.TabIndex = 95
@@ -327,7 +391,7 @@ Partial Class FormPaquetes
         '
         Me.CBoxCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBoxCliente.FormattingEnabled = True
-        Me.CBoxCliente.Location = New System.Drawing.Point(131, 98)
+        Me.CBoxCliente.Location = New System.Drawing.Point(168, 98)
         Me.CBoxCliente.Name = "CBoxCliente"
         Me.CBoxCliente.Size = New System.Drawing.Size(227, 21)
         Me.CBoxCliente.TabIndex = 4
@@ -337,10 +401,31 @@ Partial Class FormPaquetes
         Me.ChBoxCliente.AutoSize = True
         Me.ChBoxCliente.Location = New System.Drawing.Point(52, 100)
         Me.ChBoxCliente.Name = "ChBoxCliente"
-        Me.ChBoxCliente.Size = New System.Drawing.Size(61, 17)
+        Me.ChBoxCliente.Size = New System.Drawing.Size(110, 17)
         Me.ChBoxCliente.TabIndex = 3
-        Me.ChBoxCliente.Text = "Cliente:"
+        Me.ChBoxCliente.Text = "Actualizar Cliente:"
         Me.ChBoxCliente.UseVisualStyleBackColor = True
+        '
+        'PrintDocument1
+        '
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(38, 131)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(71, 16)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Destinatario"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(142, 125)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(161, 24)
+        Me.ComboBox1.TabIndex = 7
         '
         'FormPaquetes
         '
@@ -348,13 +433,15 @@ Partial Class FormPaquetes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoScrollMinSize = New System.Drawing.Size(1200, 970)
-        Me.ClientSize = New System.Drawing.Size(1178, 640)
+        Me.ClientSize = New System.Drawing.Size(1257, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormPaquetes"
         Me.Text = "FormPaquetes"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvPaquetes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -388,4 +475,11 @@ Partial Class FormPaquetes
     Friend WithEvents Label4 As Label
     Friend WithEvents DateToday As DateTimePicker
     Friend WithEvents Editar As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Label5 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label6 As Label
 End Class

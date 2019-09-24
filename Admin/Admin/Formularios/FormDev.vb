@@ -5,12 +5,12 @@
         muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
 	devoluciones.fecha_devolucion as Fecha_devolucion,
 	devoluciones.motivo as Motivo_devolucion,
-	paquetes.id_paquete as id_paquete	
+	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
 from DEVOLUCIONES, paquetes
 where devoluciones.id_paquete = paquetes.id_paquete")
-        poblarComboBox(ComboBoxPaquetes, "Select *from paquetes order by id_paquete", "id_paquete", "contenido")
+        poblarComboBox(ComboBoxPaquetes, "SELECT paquetes.id_paquete, id_paquete||'.- '||Contenido AS NOMBRE FROM  paquetes order by ID_paquete", "id_paquete", "nombre")
         datedev.MinDate = Today
-
+        poblarComboBox(ComboBox1, "SELECT empleados.id_empleado, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  empleados order by ID_empleado", "id_empleado", "nombre")
     End Sub
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
@@ -40,7 +40,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
 
         If Not Existe1(ComboBoxPaquetes.SelectedValue) Then
             Try
-                Dim insert As String = "Insert into devoluciones values(" & txtIDDev.Text & "," & ComboBoxPaquetes.SelectedValue & "," & LOGINCLAVE & ",'" & fecha1 & "','" & txtMotivo.Text & "')"
+                Dim insert As String = "Insert into devoluciones values(" & txtIDDev.Text & "," & ComboBoxPaquetes.SelectedValue & "," & ComboBox1.SelectedValue & ",'" & fecha1 & "','" & txtMotivo.Text & "')"
                 met.realizarQuery(insert)
             Catch ex As Exception
                 MsgBox("Verifica bien la informacion", vbInformation)
@@ -51,7 +51,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
 	devoluciones.fecha_devolucion as Fecha_devolucion,
 	devoluciones.motivo as Motivo_devolucion,
-	paquetes.id_paquete as id_paquete	
+	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
 from DEVOLUCIONES, paquetes
 where devoluciones.id_paquete = paquetes.id_paquete")
         txtIDDev.Text = contar()
@@ -67,7 +67,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
 	devoluciones.fecha_devolucion as Fecha_devolucion,
 	devoluciones.motivo as Motivo_devolucion,
-	paquetes.id_paquete as id_paquete	
+	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
 from DEVOLUCIONES, paquetes
 where devoluciones.id_paquete = paquetes.id_paquete")
         txtIDDev.Text = contar()
@@ -78,7 +78,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
             Dim row As DataGridViewRow
             row = Me.dgvDev.Rows(e.RowIndex)
 
-            ComboBoxPaquetes.Text = row.Cells("ID_PAQUETE").Value.ToString
+            ComboBoxPaquetes.Text = row.Cells("Informacion_paquete").Value.ToString
             txtIDDev.Text = row.Cells("id_devolucion").Value.ToString
             txtMotivo.Text = row.Cells("Motivo_devolucion").Value.ToString
 
@@ -91,7 +91,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
 	devoluciones.fecha_devolucion as Fecha_devolucion,
 	devoluciones.motivo as Motivo_devolucion,
-	paquetes.id_paquete as id_paquete	
+	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
 from DEVOLUCIONES, paquetes
 where devoluciones.id_paquete = paquetes.id_paquete")
         txtIDDev.Text = contar()
@@ -103,7 +103,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         Dim yy As Integer = datedev.Value.Year
         Dim fecha1 As String = dd & "/" & "0" & mm & "/" & yy
         Try
-            Dim up As String = "update devoluciones set id_devolucion=" & txtIDDev.Text & ",id_paquete=" & ComboBoxPaquetes.SelectedValue & ",id_empleado=" & LOGINCLAVE & ",fecha_devolucion='" & fecha1 & "',motivo='" & txtMotivo.Text & "'where id_devolucion=" & txtIDDev.Text
+            Dim up As String = "update devoluciones set id_devolucion=" & txtIDDev.Text & ",id_paquete=" & ComboBoxPaquetes.SelectedValue & ",id_empleado=" & ComboBox1.SelectedValue & ",fecha_devolucion='" & fecha1 & "',motivo='" & txtMotivo.Text & "'where id_devolucion=" & txtIDDev.Text
             met.realizarQuery(up)
             MsgBox("DEV ACTUALIZADA")
         Catch er As Exception
@@ -112,9 +112,9 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
 	devoluciones.fecha_devolucion as Fecha_devolucion,
 	devoluciones.motivo as Motivo_devolucion,
-	paquetes.id_paquete as id_paquete	
-       from DEVOLUCIONES, paquetes
-        where devoluciones.id_paquete = paquetes.id_paquete")
+	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
+from DEVOLUCIONES, paquetes
+where devoluciones.id_paquete = paquetes.id_paquete")
         txtIDDev.Text = contar()
     End Sub
 

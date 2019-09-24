@@ -4,17 +4,18 @@
         txtID.Text = contar()
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
 	entregas.fecha_entrega as fecha_entrega,
-	paquetes.id_paquete as id_paquete,
-	empleados.id_empleado as id_empleado 
-from ENTREGAS, empleados, paquetes
-where entregas.id_paquete = paquetes.id_paquete and
-      entregas.id_empleado = empleados.id_empleado")
+paquetes.remitente as nombre_remitente,
+	'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+	empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
+from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
+      entregas.id_empleado = empleados.id_empleado ")
 
-        poblarComboBox(ComboBoxPaquete, "Select *from paquetes order by id_paquete", "id_paquete", "contenido")
+        poblarComboBox(ComboBox1, "SELECT empleados.id_empleado, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  empleados order by ID_empleado", "id_empleado", "nombre")
+        poblarComboBox(ComboBoxPaquete, "SELECT paquetes.id_paquete, id_paquete||'.- '||Contenido AS NOMBRE FROM  paquetes order by ID_paquete", "id_paquete", "nombre")
         DateTimePicker1.MinDate = Today
 
         TextBox1.Text = Format(Now, "h:mm:ss A5/P5")
-
+        muestra(DataGridView1, "Select id_entrega from entregas")
 
 
     End Sub
@@ -25,18 +26,22 @@ where entregas.id_paquete = paquetes.id_paquete and
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         Dim fecha As String
-        Dim fecha1 As String
-        Dim xCnx As New Oracle
-        Dim xDT As DataTable
-        Dim dd As Integer = DateTimePicker1.Value.Day
-        Dim mm As Integer = DateTimePicker1.Value.Month.ToString
+            Dim fecha1 As String
+            Dim xCnx As New Oracle
+            Dim xDT As DataTable
+            Dim dd As Integer = DateTimePicker1.Value.Day
+            Dim mm As Integer = DateTimePicker1.Value.Month.ToString
         Dim yy As Integer = DateTimePicker1.Value.Year
+
         fecha1 = dd & "/" & "0" & mm & "/" & yy
-        Dim nm As String = "select	 PAQUETES.FECHA_ENTREGA as FECHA_ENTREGA 
+            Dim nm As String = "select	 PAQUETES.FECHA_ENTREGA as FECHA_ENTREGA 
                              from	 PAQUETES PAQUETES WHERE ID_PAQUETE =" & ComboBoxPaquete.SelectedValue
-        xDT = xCnx.objetoDataAdapter(nm)
-        fecha = CStr(xDT.Rows(0)("FECHA_ENTREGA"))
+            xDT = xCnx.objetoDataAdapter(nm)
+            fecha = CStr(xDT.Rows(0)("FECHA_ENTREGA"))
+
+
 
         Try
 
@@ -59,7 +64,7 @@ where entregas.id_paquete = paquetes.id_paquete and
                         End Try
 
                     End If
-                    Dim insert As String = "insert into ENTREGAS values(" & txtID.Text & "," & ComboBoxPaquete.SelectedValue & "," & LOGINCLAVE & ",'" & fecha1 & "')"
+                    Dim insert As String = "insert into ENTREGAS values(" & txtID.Text & "," & ComboBoxPaquete.SelectedValue & "," & ComboBox1.SelectedValue & ",'" & fecha1 & "')"
                     Try
                         met.realizarQuery(insert)
                         MsgBox("PAQUETE ENTREGADO")
@@ -79,11 +84,11 @@ where entregas.id_paquete = paquetes.id_paquete and
 
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
 	entregas.fecha_entrega as fecha_entrega,
-	paquetes.id_paquete as id_paquete,
-	empleados.id_empleado as id_empleado 
-from ENTREGAS, empleados, paquetes
-where entregas.id_paquete = paquetes.id_paquete and
-      entregas.id_empleado = empleados.id_empleado")
+paquetes.remitente as nombre_remitente,
+	'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+	empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
+from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
+      entregas.id_empleado = empleados.id_empleado ")
         txtID.Text = contar()
     End Sub
 
@@ -94,22 +99,22 @@ where entregas.id_paquete = paquetes.id_paquete and
         End If
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
 	entregas.fecha_entrega as fecha_entrega,
-	paquetes.id_paquete as id_paquete,
-	empleados.id_empleado as id_empleado 
-from ENTREGAS, empleados, paquetes
-where entregas.id_paquete = paquetes.id_paquete and
-      entregas.id_empleado = empleados.id_empleado")
+paquetes.remitente as nombre_remitente,
+	'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+	empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
+from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
+      entregas.id_empleado = empleados.id_empleado ")
         txtID.Text = contar()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
 	entregas.fecha_entrega as fecha_entrega,
-	paquetes.id_paquete as id_paquete,
-	empleados.id_empleado as id_empleado 
-from ENTREGAS, empleados, paquetes
-where entregas.id_paquete = paquetes.id_paquete and
-      entregas.id_empleado = empleados.id_empleado")
+paquetes.remitente as nombre_remitente,
+	'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+	empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
+from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
+      entregas.id_empleado = empleados.id_empleado ")
         txtID.Text = contar()
     End Sub
 
@@ -150,12 +155,68 @@ where entregas.id_paquete = paquetes.id_paquete and
     Public Function contar() As Double
         Dim xCnx As New Oracle
         Dim nm As String = "SELECT COUNT(*) FROM entregas"
-
         Dim c As Integer = xCnx.objetoScalar(nm)
+
+        Dim xCnx1 As New Oracle
+        Dim nm1 As String = "SELECT id_paquete FROM entregas"
+        Dim c1 As Integer = xCnx1.objetoScalar(nm)
 
         Return c + 1
 
+
+
+        'For i = 0 To dgvEntregas.RowCount - 1
+        '    For j = 0 To DataGridView1.RowCount - 1
+        '        ':::Realizamos la validación de cada celda
+        '        If DataGridView1.Rows(j).Cells(0).Value = dgvEntregas.Rows(i).Cells(0).Value Then
+        '            ':::Pintamos de color azul las que son iguales
+        '            Return c + 2
+        '            ':::Aumentamos nuestro contador en 1
+        '        Else
+        '            Return c + 1
+        '        End If
+        '    Next
+        'Next
+
     End Function
+
+    Private Sub dgvEntregas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntregas.CellContentClick
+
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = Me.dgvEntregas.Rows(e.RowIndex)
+
+            '            Select Case entregas.id_entrega As id_entrega,
+            '    entregas.fecha_entrega as fecha_entrega,
+            'Paquetes.remitente As nombre_remitente,
+            '    'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+            '                empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
+            'From ENTREGAS, empleados, paquetes Where ENTREGAS.id_paquete = paquetes.id_paquete And
+            '      ENTREGAS.id_empleado = empleados.id_empleado
+
+
+            TextBox2.Text = row.Cells("nombre_remitente").Value.ToString
+            txtID.Text = row.Cells("ID_Entrega").Value.ToString
+            ComboBox1.Text = row.Cells("nombre_empleado").Value.ToString
+            ComboBoxPaquete.Text = row.Cells("Informacion_Paquete").Value.ToString
+
+
+
+
+
+        End If
+    End Sub
+    Private Sub ComboBoxPaquete_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPaquete.SelectionChangeCommitted
+
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT remitente from paquetes WHERE id_paquete=" & ComboBoxPaquete.SelectedValue
+
+        Dim c As String = xCnx.objetoScalar(nm)
+        TextBox2.Text = c
+
+
+    End Sub
 
 
 End Class

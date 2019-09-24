@@ -12,10 +12,10 @@
 
 
     Private Sub CBEmp_Click(sender As Object, e As EventArgs) Handles CBEmp.Click
-        poblarComboBox(CBEmp, "Select *from empleados order by ID_empleado ", "id_empleado", "Nombre")
+        poblarComboBox(CBEmp, "SELECT empleados.id_empleado, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  empleados order by ID_empleado", "id_empleado", "Nombre")
     End Sub
     Private Sub Cbc_Click(sender As Object, e As EventArgs) Handles CBc.Click
-        poblarComboBox(CBc, "Select *from clientes order by ID_cliente", "id_cliente", "Nombre")
+        poblarComboBox(CBc, "SELECT clientes.id_cliente, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  CLIENTES order by ID_CLIENTE", "id_cliente", "Nombre")
     End Sub
 
     Private Sub CheckBoxEm_CheckedChanged(sender As Object, e As EventArgs)

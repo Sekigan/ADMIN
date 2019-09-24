@@ -281,6 +281,7 @@ Partial Class CrearUsuarioLOGIN
         '
         'txtId
         '
+        Me.txtId.Enabled = False
         Me.txtId.Location = New System.Drawing.Point(144, 19)
         Me.txtId.MaxLength = 3
         Me.txtId.Name = "txtId"

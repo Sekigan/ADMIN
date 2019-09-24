@@ -1,0 +1,19 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO PAISES VALUES(1,'MEXICO');
+
+INSERT INTO ESTADOS VALUES(1,1,'COAHUILA');
+
+INSERT INTO CIUDADES VALUES(1,1,1,'SALTILLO');
+
+INSERT INTO COLONIAS VALUES(1,1,1,1,'CENTRO');
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO EMPLEADOS VALUES(1,1,1,1,1,'NOMBRE','PATERNO','MATERNO','RFCRFCRFC','CURPCURP','M',NULL,'32938291','283','15 DE MAYO');
+INSERT INTO LOGIN VALUES(1,'pass1');
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO CLIENTES VALUES(1,1,1,1,1,'RAUL','ITS','ITS2',20,'RFCRFCRFC','CURPCURP','M','raul@its.com','8442459157',135,'Calle 20');
+insert into PAQUETES values(1,1,1,'RAUL',8442451517,5/13/2019,'PC','30kg','NOMBRE PATERNO MATERNO',5/13/2019,		300,		'Frag',			5/14/2019)

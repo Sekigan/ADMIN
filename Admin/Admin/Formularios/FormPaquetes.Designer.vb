@@ -28,31 +28,32 @@ Partial Class FormPaquetes
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Editar = New System.Windows.Forms.Button()
-        Me.DateToday = New System.Windows.Forms.DateTimePicker()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnAgrega = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dgvPaquetes = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Costo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtPeso = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DateToday = New System.Windows.Forms.DateTimePicker()
         Me.txtIdPaquetes = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.DateEntrega = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Contenido = New System.Windows.Forms.RichTextBox()
         Me.gbPaises = New System.Windows.Forms.GroupBox()
         Me.Observa = New System.Windows.Forms.RichTextBox()
-        Me.DateEntrega = New System.Windows.Forms.DateTimePicker()
         Me.ChBoxNuevoCliente = New System.Windows.Forms.CheckBox()
         Me.CBoxCliente = New System.Windows.Forms.ComboBox()
         Me.ChBoxCliente = New System.Windows.Forms.CheckBox()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,8 +71,6 @@ Partial Class FormPaquetes
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Editar)
-        Me.Panel1.Controls.Add(Me.DateToday)
-        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnAgrega)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.btneliminar)
@@ -80,21 +79,20 @@ Partial Class FormPaquetes
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.gbPaises)
-        Me.Panel1.Controls.Add(Me.DateEntrega)
         Me.Panel1.Controls.Add(Me.ChBoxNuevoCliente)
         Me.Panel1.Controls.Add(Me.CBoxCliente)
         Me.Panel1.Controls.Add(Me.ChBoxCliente)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1240, 970)
+        Me.Panel1.Size = New System.Drawing.Size(1257, 970)
         Me.Panel1.TabIndex = 0
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(824, 121)
+        Me.Label5.Location = New System.Drawing.Point(527, 121)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(204, 39)
         Me.Label5.TabIndex = 131
@@ -131,7 +129,7 @@ Partial Class FormPaquetes
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(496, 741)
+        Me.Button1.Location = New System.Drawing.Point(504, 741)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 128
@@ -148,31 +146,12 @@ Partial Class FormPaquetes
         Me.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Editar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Editar.ForeColor = System.Drawing.Color.Black
-        Me.Editar.Location = New System.Drawing.Point(579, 698)
+        Me.Editar.Location = New System.Drawing.Point(587, 698)
         Me.Editar.Name = "Editar"
         Me.Editar.Size = New System.Drawing.Size(75, 23)
         Me.Editar.TabIndex = 127
         Me.Editar.Text = "Editar"
         Me.Editar.UseVisualStyleBackColor = False
-        '
-        'DateToday
-        '
-        Me.DateToday.Location = New System.Drawing.Point(827, 140)
-        Me.DateToday.Name = "DateToday"
-        Me.DateToday.Size = New System.Drawing.Size(200, 20)
-        Me.DateToday.TabIndex = 9
-        Me.DateToday.Value = New Date(2019, 5, 13, 0, 0, 0, 0)
-        Me.DateToday.Visible = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(730, 98)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 13)
-        Me.Label4.TabIndex = 126
-        Me.Label4.Text = "Fecha de entrega"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'btnAgrega
         '
@@ -184,7 +163,7 @@ Partial Class FormPaquetes
         Me.btnAgrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgrega.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgrega.ForeColor = System.Drawing.Color.Black
-        Me.btnAgrega.Location = New System.Drawing.Point(495, 697)
+        Me.btnAgrega.Location = New System.Drawing.Point(503, 697)
         Me.btnAgrega.Name = "btnAgrega"
         Me.btnAgrega.Size = New System.Drawing.Size(75, 23)
         Me.btnAgrega.TabIndex = 118
@@ -201,7 +180,7 @@ Partial Class FormPaquetes
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(753, 698)
+        Me.Button3.Location = New System.Drawing.Point(761, 698)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 121
@@ -218,7 +197,7 @@ Partial Class FormPaquetes
         Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(667, 698)
+        Me.btneliminar.Location = New System.Drawing.Point(675, 698)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
         Me.btneliminar.TabIndex = 120
@@ -235,7 +214,7 @@ Partial Class FormPaquetes
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(1037, 765)
+        Me.btnCancelar.Location = New System.Drawing.Point(1045, 765)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 122
@@ -252,7 +231,7 @@ Partial Class FormPaquetes
         Me.dgvPaquetes.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPaquetes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPaquetes.Location = New System.Drawing.Point(513, 183)
+        Me.dgvPaquetes.Location = New System.Drawing.Point(530, 183)
         Me.dgvPaquetes.Name = "dgvPaquetes"
         Me.dgvPaquetes.ReadOnly = True
         Me.dgvPaquetes.Size = New System.Drawing.Size(617, 472)
@@ -260,21 +239,53 @@ Partial Class FormPaquetes
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Costo)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtPeso)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.DateToday)
         Me.GroupBox2.Controls.Add(Me.txtIdPaquetes)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.DateEntrega)
         Me.GroupBox2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(53, 218)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(336, 162)
+        Me.GroupBox2.Size = New System.Drawing.Size(342, 221)
         Me.GroupBox2.TabIndex = 97
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Paquete Info"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(21, 181)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(83, 16)
+        Me.Label7.TabIndex = 127
+        Me.Label7.Text = "Fecha de envi0"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(142, 125)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(161, 24)
+        Me.ComboBox1.TabIndex = 7
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(38, 131)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(71, 16)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Destinatario"
         '
         'Costo
         '
@@ -301,6 +312,25 @@ Partial Class FormPaquetes
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(161, 20)
         Me.txtPeso.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(21, 158)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(96, 16)
+        Me.Label4.TabIndex = 126
+        Me.Label4.Text = "Fecha de entrega"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'DateToday
+        '
+        Me.DateToday.Enabled = False
+        Me.DateToday.Location = New System.Drawing.Point(118, 181)
+        Me.DateToday.Name = "DateToday"
+        Me.DateToday.Size = New System.Drawing.Size(200, 20)
+        Me.DateToday.TabIndex = 9
+        Me.DateToday.Value = New Date(2019, 9, 24, 0, 0, 0, 0)
         '
         'txtIdPaquetes
         '
@@ -330,11 +360,18 @@ Partial Class FormPaquetes
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Id del paquete"
         '
+        'DateEntrega
+        '
+        Me.DateEntrega.Location = New System.Drawing.Point(118, 155)
+        Me.DateEntrega.Name = "DateEntrega"
+        Me.DateEntrega.Size = New System.Drawing.Size(200, 20)
+        Me.DateEntrega.TabIndex = 9
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Contenido)
         Me.GroupBox1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(53, 386)
+        Me.GroupBox1.Location = New System.Drawing.Point(52, 445)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(336, 109)
         Me.GroupBox1.TabIndex = 96
@@ -354,7 +391,7 @@ Partial Class FormPaquetes
         '
         Me.gbPaises.Controls.Add(Me.Observa)
         Me.gbPaises.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbPaises.Location = New System.Drawing.Point(53, 527)
+        Me.gbPaises.Location = New System.Drawing.Point(52, 581)
         Me.gbPaises.Name = "gbPaises"
         Me.gbPaises.Size = New System.Drawing.Size(336, 128)
         Me.gbPaises.TabIndex = 95
@@ -369,13 +406,6 @@ Partial Class FormPaquetes
         Me.Observa.Size = New System.Drawing.Size(303, 76)
         Me.Observa.TabIndex = 3
         Me.Observa.Text = ""
-        '
-        'DateEntrega
-        '
-        Me.DateEntrega.Location = New System.Drawing.Point(827, 95)
-        Me.DateEntrega.Name = "DateEntrega"
-        Me.DateEntrega.Size = New System.Drawing.Size(200, 20)
-        Me.DateEntrega.TabIndex = 9
         '
         'ChBoxNuevoCliente
         '
@@ -409,31 +439,13 @@ Partial Class FormPaquetes
         'PrintDocument1
         '
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(38, 131)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(71, 16)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Destinatario"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(142, 125)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(161, 24)
-        Me.ComboBox1.TabIndex = 7
-        '
         'FormPaquetes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoScrollMinSize = New System.Drawing.Size(1200, 970)
-        Me.ClientSize = New System.Drawing.Size(1257, 460)
+        Me.ClientSize = New System.Drawing.Size(1274, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormPaquetes"
@@ -482,4 +494,5 @@ Partial Class FormPaquetes
     Friend WithEvents Label5 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 End Class

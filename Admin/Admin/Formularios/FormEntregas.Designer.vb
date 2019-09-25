@@ -64,7 +64,7 @@ Partial Class FormEntregas
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1240, 970)
+        Me.Panel1.Size = New System.Drawing.Size(1325, 970)
         Me.Panel1.TabIndex = 0
         '
         'DataGridView1
@@ -86,7 +86,7 @@ Partial Class FormEntregas
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(679, 555)
+        Me.Button1.Location = New System.Drawing.Point(721, 555)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 128
@@ -103,7 +103,7 @@ Partial Class FormEntregas
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(584, 555)
+        Me.Button3.Location = New System.Drawing.Point(626, 555)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 131
@@ -120,7 +120,7 @@ Partial Class FormEntregas
         Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(774, 555)
+        Me.btneliminar.Location = New System.Drawing.Point(816, 555)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
         Me.btneliminar.TabIndex = 130
@@ -137,7 +137,7 @@ Partial Class FormEntregas
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(1078, 583)
+        Me.btnCancelar.Location = New System.Drawing.Point(1120, 583)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 132
@@ -282,7 +282,7 @@ Partial Class FormEntregas
         Me.dgvEntregas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEntregas.Location = New System.Drawing.Point(587, 68)
+        Me.dgvEntregas.Location = New System.Drawing.Point(672, 68)
         Me.dgvEntregas.Name = "dgvEntregas"
         Me.dgvEntregas.ReadOnly = True
         Me.dgvEntregas.Size = New System.Drawing.Size(598, 432)
@@ -304,7 +304,7 @@ Partial Class FormEntregas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoScrollMinSize = New System.Drawing.Size(1200, 970)
-        Me.ClientSize = New System.Drawing.Size(1257, 460)
+        Me.ClientSize = New System.Drawing.Size(1342, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormEntregas"

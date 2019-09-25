@@ -4,31 +4,37 @@
 
     Private Sub FormPaquetes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtIdPaquetes.Text = contar()
+
         muestra(dgvPaquetes, "Select paquetes.id_paquete as id_paquete,
-	        paquetes.contenido as contenido,
+         paquetes.contenido as contenido,
             paquetes.precio_envio as precio_envio,
-            paquetes.remitente as remitente,
-	        paquetes.telefono_remitente as telefono_remitente,
+            clientes.nombre||' '||clientes.paterno||' '||clientes.materno as nombre_remitente,
+            cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0,
+         paquetes.telefono_remitente as telefono_remitente,
         	paquetes.fecha_envio as fecha_envio,
             paquetes.fecha_entrega as fecha_entrega,
-	        paquetes.peso as peso,
-	        paquetes.nombre_empleado as nombre_empleado,
-	        paquetes.dia_dealta as dia_de_alta,
-	        paquetes.observacion as observacion,
-	        empleados.id_empleado as id_empleado,
-	        clientes.id_cliente as id_cliente
-            from PAQUETES, empleados, clientes 
+         paquetes.peso as peso,
+         paquetes.nombre_empleado as nombre_empleado,
+         paquetes.dia_dealta as dia_de_alta,
+         paquetes.observacion as observacion,
+         empleados.id_empleado as id_empleado,
+         clientes.id_cliente as id_cliente 
+            from PAQUETES, empleados, clientes, clientes cd
             where paquetes.id_cliente = clientes.id_cliente and 
-            paquetes.id_empleado = empleados.id_empleado")
+            paquetes.id_empleado = empleados.id_empleado and 
+            paquetes.id_cliente_d = cd.id_cliente")
+
         DateEntrega.MinDate = Today
         DateToday.MinDate = Today
         DateEntrega.CustomFormat = "DD/MM/YYYY"
         muestra(DataGridView1, "Select id_paquete from entregas")
         muestra(DataGridView2, "Select id_paquete from devoluciones")
         comparar()
+
         poblarComboBox(CBoxCliente, "SELECT clientes.id_cliente, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  CLIENTES order by ID_CLIENTE ", "id_cliente", "nombre")
 
-        poblarComboBox(CBoxCliente, "SELECT clientes.id_cliente, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  CLIENTES WHERE NOT EXISTS(select FROM  CLIENTES  where paquetes.id_paquete= " & CBoxCliente.SelectedValue & ")", "id_cliente", "nombre")
+
+
 
     End Sub
 
@@ -39,6 +45,7 @@
     End Sub
 
     Private Sub ChBoxCliente_CheckedChanged(sender As Object, e As EventArgs) Handles ChBoxCliente.CheckedChanged
+
 
         If ChBoxCliente.Checked Then
 
@@ -110,7 +117,7 @@
             Dim diaa As String = d & "/" & m & "/" & y
             Dim diaE As String = dd & "/" & mm & "/" & yy
 
-            Dim consulta As String = "insert into PAQUETES values(" & txtIdPaquetes.Text & "," & LOGINCLAVE & "," & CBoxCliente.SelectedValue & ",'" & ClienteN & "'," & ClienteT & ",'" & d & "/" & m & "/" & y & "','" & Contenido.Text & "','" & txtPeso.Text & "','" & LOGINNOMBRE & "','" & d & "/" & m & "/" & y & "'," & preciop & ",'" & Observa.Text & "','" & dd & "/" & mm & "/" & yy & "')"
+            Dim consulta As String = "insert into PAQUETES values(" & txtIdPaquetes.Text & "," & LOGINCLAVE & "," & CBoxCliente.SelectedValue & "," & ClienteT & ",'" & d & "/" & m & "/" & y & "','" & Contenido.Text & "','" & txtPeso.Text & "','" & LOGINNOMBRE & "','" & d & "/" & m & "/" & y & "'," & preciop & ",'" & Observa.Text & "','" & dd & "/" & mm & "/" & yy & "'," & ComboBox1.SelectedValue & ")"
 
 
 
@@ -123,21 +130,23 @@
 
         End Try
         muestra(dgvPaquetes, "Select paquetes.id_paquete as id_paquete,
-	        paquetes.contenido as contenido,
+         paquetes.contenido as contenido,
             paquetes.precio_envio as precio_envio,
-            paquetes.remitente as remitente,
-	        paquetes.telefono_remitente as telefono_remitente,
+            clientes.nombre||' '||clientes.paterno||' '||clientes.materno as nombre_remitente,
+            cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0,
+         paquetes.telefono_remitente as telefono_remitente,
         	paquetes.fecha_envio as fecha_envio,
             paquetes.fecha_entrega as fecha_entrega,
-	        paquetes.peso as peso,
-	        paquetes.nombre_empleado as nombre_empleado,
-	        paquetes.dia_dealta as dia_de_alta,
-	        paquetes.observacion as observacion,
-	        empleados.id_empleado as id_empleado,
-	        clientes.id_cliente as id_cliente
-            from PAQUETES, empleados, clientes
+         paquetes.peso as peso,
+         paquetes.nombre_empleado as nombre_empleado,
+         paquetes.dia_dealta as dia_de_alta,
+         paquetes.observacion as observacion,
+         empleados.id_empleado as id_empleado,
+         clientes.id_cliente as id_cliente 
+            from PAQUETES, empleados, clientes, clientes cd
             where paquetes.id_cliente = clientes.id_cliente and 
-            paquetes.id_empleado = empleados.id_empleado")
+            paquetes.id_empleado = empleados.id_empleado and 
+            paquetes.id_cliente_d = cd.id_cliente")
         txtIdPaquetes.Text = contar()
         comparar()
 
@@ -152,7 +161,7 @@
 
 
 
-            CBoxCliente.Text = row.Cells("Remitente").Value.ToString
+            CBoxCliente.Text = row.Cells("id_cliente").Value.ToString
             txtIdPaquetes.Text = row.Cells("ID_PAQUETE").Value.ToString
             txtPeso.Text = row.Cells("PESO").Value.ToString
             Contenido.Text = row.Cells("CONTENIDO").Value.ToString
@@ -174,21 +183,23 @@
         met.LimpiarCamposG(gbPaises)
         txtIdPaquetes.Text = contar()
         muestra(dgvPaquetes, "Select paquetes.id_paquete as id_paquete,
-	        paquetes.contenido as contenido,
+         paquetes.contenido as contenido,
             paquetes.precio_envio as precio_envio,
-            paquetes.remitente as remitente,
-	        paquetes.telefono_remitente as telefono_remitente,
+            clientes.nombre||' '||clientes.paterno||' '||clientes.materno as nombre_remitente,
+            cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0,
+         paquetes.telefono_remitente as telefono_remitente,
         	paquetes.fecha_envio as fecha_envio,
             paquetes.fecha_entrega as fecha_entrega,
-	        paquetes.peso as peso,
-	        paquetes.nombre_empleado as nombre_empleado,
-	        paquetes.dia_dealta as dia_de_alta,
-	        paquetes.observacion as observacion,
-	        empleados.id_empleado as id_empleado,
-	        clientes.id_cliente as id_cliente
-            from PAQUETES, empleados, clientes
+         paquetes.peso as peso,
+         paquetes.nombre_empleado as nombre_empleado,
+         paquetes.dia_dealta as dia_de_alta,
+         paquetes.observacion as observacion,
+         empleados.id_empleado as id_empleado,
+         clientes.id_cliente as id_cliente 
+            from PAQUETES, empleados, clientes, clientes cd
             where paquetes.id_cliente = clientes.id_cliente and 
-            paquetes.id_empleado = empleados.id_empleado")
+            paquetes.id_empleado = empleados.id_empleado and 
+            paquetes.id_cliente_d = cd.id_cliente")
         comparar()
 
     End Sub
@@ -202,23 +213,24 @@
         Catch er As Exception
             MsgBox("Imposible borrar")
         End Try
-
         muestra(dgvPaquetes, "Select paquetes.id_paquete as id_paquete,
-	        paquetes.contenido as contenido,
+         paquetes.contenido as contenido,
             paquetes.precio_envio as precio_envio,
-            paquetes.remitente as remitente,
-	        paquetes.telefono_remitente as telefono_remitente,
+            clientes.nombre||' '||clientes.paterno||' '||clientes.materno as nombre_remitente,
+            cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0,
+         paquetes.telefono_remitente as telefono_remitente,
         	paquetes.fecha_envio as fecha_envio,
             paquetes.fecha_entrega as fecha_entrega,
-	        paquetes.peso as peso,
-	        paquetes.nombre_empleado as nombre_empleado,
-	        paquetes.dia_dealta as dia_de_alta,
-	        paquetes.observacion as observacion,
-	        empleados.id_empleado as id_empleado,
-	        clientes.id_cliente as id_cliente
-            from PAQUETES, empleados, clientes
+         paquetes.peso as peso,
+         paquetes.nombre_empleado as nombre_empleado,
+         paquetes.dia_dealta as dia_de_alta,
+         paquetes.observacion as observacion,
+         empleados.id_empleado as id_empleado,
+         clientes.id_cliente as id_cliente 
+            from PAQUETES, empleados, clientes, clientes cd
             where paquetes.id_cliente = clientes.id_cliente and 
-            paquetes.id_empleado = empleados.id_empleado")
+            paquetes.id_empleado = empleados.id_empleado and 
+            paquetes.id_cliente_d = cd.id_cliente")
         comparar()
         txtIdPaquetes.Text = contar()
     End Sub
@@ -261,29 +273,31 @@
         met.precioPaq(peso)
         Costo.Text = preciop
         Try
-            Dim update As String = "update paquetes set id_paquete=" & txtIdPaquetes.Text & ",id_empleado=" & LOGINCLAVE & ", id_cliente=" & CBoxCliente.SelectedValue & ",remitente='" & ClienteN & "', telefono_remitente=" & ClienteT & ", fecha_envio ='" & diaE & "',
-        contenido='" & Contenido.Text & "',peso=" & txtPeso.Text & ",nombre_empleado  ='" & LOGINNOMBRE & "', dia_dealta ='" & diaa & "',precio_envio =" & preciop & ", observacion ='" & Observa.Text & "',fecha_entrega ='" & diaa & "' where id_paquete=" & txtIdPaquetes.Text
+            Dim update As String = "update paquetes set id_paquete=" & txtIdPaquetes.Text & ",id_empleado=" & LOGINCLAVE & ", id_cliente=" & CBoxCliente.SelectedValue & "', telefono_remitente=" & ClienteT & ", fecha_envio ='" & diaE & "',
+        contenido='" & Contenido.Text & "',peso=" & txtPeso.Text & ",nombre_empleado  ='" & LOGINNOMBRE & "', dia_dealta ='" & diaa & "',precio_envio =" & preciop & ", observacion ='" & Observa.Text & "',fecha_entrega ='" & diaa & "," & ComboBox1.SelectedValue & "' where id_paquete=" & txtIdPaquetes.Text
             met.realizarQuery(update)
             MsgBox("UPDATE")
         Catch er As Exception
             MsgBox("ERR", vbInformation)
         End Try
         muestra(dgvPaquetes, "Select paquetes.id_paquete as id_paquete,
-	        paquetes.contenido as contenido,
+         paquetes.contenido as contenido,
             paquetes.precio_envio as precio_envio,
-            paquetes.remitente as remitente,
-	        paquetes.telefono_remitente as telefono_remitente,
+            clientes.nombre||' '||clientes.paterno||' '||clientes.materno as nombre_remitente,
+            cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0,
+         paquetes.telefono_remitente as telefono_remitente,
         	paquetes.fecha_envio as fecha_envio,
             paquetes.fecha_entrega as fecha_entrega,
-	        paquetes.peso as peso,
-	        paquetes.nombre_empleado as nombre_empleado,
-	        paquetes.dia_dealta as dia_de_alta,
-	        paquetes.observacion as observacion,
-	        empleados.id_empleado as id_empleado,
-	        clientes.id_cliente as id_cliente
-            from PAQUETES, empleados, clientes
+         paquetes.peso as peso,
+         paquetes.nombre_empleado as nombre_empleado,
+         paquetes.dia_dealta as dia_de_alta,
+         paquetes.observacion as observacion,
+         empleados.id_empleado as id_empleado,
+         clientes.id_cliente as id_cliente 
+            from PAQUETES, empleados, clientes, clientes cd
             where paquetes.id_cliente = clientes.id_cliente and 
-            paquetes.id_empleado = empleados.id_empleado")
+            paquetes.id_empleado = empleados.id_empleado and 
+            paquetes.id_cliente_d = c.id_cliente")
         txtIdPaquetes.Text = contar()
         comparar()
     End Sub
@@ -332,6 +346,10 @@
         Dim xCnx As New Oracle
         Dim nm As String = "SELECT NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  CLIENTES WHERE ID_CLIENTE =" & CBoxCliente.SelectedValue
         Dim nombre As String = xCnx.objetoScalar(nm)
+
+        Dim xCnx1 As New Oracle
+        Dim nm1 As String = "SELECT NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  CLIENTES WHERE ID_CLIENTE =" & ComboBox1.SelectedValue
+        Dim nombre1 As String = xCnx1.objetoScalar(nm1)
         Try
             ' Imprime la cabecera
             yPos = 40
@@ -353,14 +371,19 @@
 
             titulo = "ID_PAQUETE" & " | " & "PAQUETE" & "     |  " & "PRECIO"
             textoC = id & "            " & contenidotext & "       " & valor 'Configura la linea
+
+
             yPos = 200
             e.Graphics.DrawString(titulo, printFont, System.Drawing.Brushes.Black, 10, yPos)
             yPos = 120 + topMargin + (count * printFont.GetHeight(e.Graphics)) ' Calcula la posición en la que se escribe la línea
             ' Imprime la línea con el objeto Graphics
 
             e.Graphics.DrawString(textoC, printFont, System.Drawing.Brushes.Black, 10, yPos)
-
+            yPos += 30
+            e.Graphics.DrawString("Destinatari0; ", printFont, System.Drawing.Brushes.Black, 10, yPos)
             yPos += 20
+            e.Graphics.DrawString(nombre1, printFont, System.Drawing.Brushes.Black, 10, yPos)
+            yPos += 30
             e.Graphics.DrawString("---------------------------------", printFont, Brushes.Black, 10, yPos)
 
             Dim puntos As String
@@ -410,6 +433,14 @@
         Catch ex As Exception
             MsgBox("Error en la operación por: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub CBoxCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBoxCliente.SelectedIndexChanged
+
+        poblarComboBox(ComboBox1, "SELECT clientes.id_cliente, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  CLIENTES WHERE  id_cliente <> " & CBoxCliente.SelectedIndex + 1, "id_cliente", "nombre")
+
+
+
     End Sub
 
 

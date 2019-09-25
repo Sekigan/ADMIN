@@ -120,6 +120,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Clase\ClasePaises.vb" />
     <Compile Include="Clase\Empleado.vb" />
     <Compile Include="Clase\login.vb" />

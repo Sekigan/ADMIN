@@ -3,12 +3,16 @@
     Private Sub FormEntregas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtID.Text = contar()
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
-	entregas.fecha_entrega as fecha_entrega,
-paquetes.remitente as nombre_remitente,
-	'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
-	empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
-from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
-      entregas.id_empleado = empleados.id_empleado ")
+	    entregas.fecha_entrega as fecha_entrega,
+	    'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+	    empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
+        re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
+        cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
+        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes 
+        where entregas.id_paquete = paquetes.id_paquete and
+        entregas.id_empleado = empleados.id_empleado and 
+        paquetes.id_cliente = cd.id_cliente and
+            paquetes.id_cliente_d = re.id_cliente")
 
         poblarComboBox(ComboBox1, "SELECT empleados.id_empleado, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  empleados order by ID_empleado", "id_empleado", "nombre")
         poblarComboBox(ComboBoxPaquete, "SELECT paquetes.id_paquete, id_paquete||'.- '||Contenido AS NOMBRE FROM  paquetes order by ID_paquete", "id_paquete", "nombre")
@@ -83,12 +87,13 @@ from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paque
         End Try
 
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
-	entregas.fecha_entrega as fecha_entrega,
-paquetes.remitente as nombre_remitente,
-	'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
-	empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
-from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
-      entregas.id_empleado = empleados.id_empleado ")
+	    entregas.fecha_entrega as fecha_entrega,
+	    'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+	    empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
+        re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
+        cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
+        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
+        entregas.id_empleado = empleados.id_empleado ")
         txtID.Text = contar()
     End Sub
 
@@ -98,23 +103,25 @@ from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paque
             MessageBox.Show("PAQUETE BORRADO")
         End If
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
-	entregas.fecha_entrega as fecha_entrega,
-paquetes.remitente as nombre_remitente,
-	'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
-	empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
-from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
-      entregas.id_empleado = empleados.id_empleado ")
+	    entregas.fecha_entrega as fecha_entrega,
+	    'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+	    empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
+        re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
+        cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
+        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
+        entregas.id_empleado = empleados.id_empleado ")
         txtID.Text = contar()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
-	entregas.fecha_entrega as fecha_entrega,
-paquetes.remitente as nombre_remitente,
-	'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
-	empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
-from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
-      entregas.id_empleado = empleados.id_empleado ")
+	    entregas.fecha_entrega as fecha_entrega,
+	    'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+	    empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
+        re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
+        cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
+        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
+        entregas.id_empleado = empleados.id_empleado ")
         txtID.Text = contar()
     End Sub
 
@@ -187,13 +194,14 @@ from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paque
             Dim row As DataGridViewRow
             row = Me.dgvEntregas.Rows(e.RowIndex)
 
-            '            Select Case entregas.id_entrega As id_entrega,
-            '    entregas.fecha_entrega as fecha_entrega,
-            'Paquetes.remitente As nombre_remitente,
-            '    'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
-            '                empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado
-            'From ENTREGAS, empleados, paquetes Where ENTREGAS.id_paquete = paquetes.id_paquete And
-            '      ENTREGAS.id_empleado = empleados.id_empleado
+            '       muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
+            'entregas.fecha_entrega as fecha_entrega,
+            ''ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+            'empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
+            '   re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
+            '   cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
+            '   from ENTREGAS, Clientes cd,clientes re,empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
+            '   entregas.id_empleado = empleados.id_empleado ")
 
 
             TextBox2.Text = row.Cells("nombre_remitente").Value.ToString
@@ -210,7 +218,7 @@ from ENTREGAS, empleados, paquetes where entregas.id_paquete = paquetes.id_paque
     Private Sub ComboBoxPaquete_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPaquete.SelectionChangeCommitted
 
         Dim xCnx As New Oracle
-        Dim nm As String = "SELECT remitente from paquetes WHERE id_paquete=" & ComboBoxPaquete.SelectedValue
+        Dim nm As String = "SELECT c.NOMBRE||' '||c.PATERNO||' '||c.MATERNO AS nombre  from clientes c, paquetes WHERE id_paquete=" & ComboBoxPaquete.SelectedValue
 
         Dim c As String = xCnx.objetoScalar(nm)
         TextBox2.Text = c

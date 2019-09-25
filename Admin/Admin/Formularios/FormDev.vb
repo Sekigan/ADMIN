@@ -3,11 +3,11 @@
     Private Sub FormDev_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtIDDev.Text = contar()
         muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
-	devoluciones.fecha_devolucion as Fecha_devolucion,
-	devoluciones.motivo as Motivo_devolucion,
-	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
-from DEVOLUCIONES, paquetes
-where devoluciones.id_paquete = paquetes.id_paquete")
+	    devoluciones.fecha_devolucion as Fecha_devolucion,
+    	devoluciones.motivo as Motivo_devolucion,
+	    'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
+        from DEVOLUCIONES, paquetes
+        where devoluciones.id_paquete = paquetes.id_paquete")
         poblarComboBox(ComboBoxPaquetes, "SELECT paquetes.id_paquete, id_paquete||'.- '||Contenido AS NOMBRE FROM  paquetes order by ID_paquete", "id_paquete", "nombre")
         datedev.MinDate = Today
         poblarComboBox(ComboBox1, "SELECT empleados.id_empleado, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  empleados order by ID_empleado", "id_empleado", "nombre")
@@ -160,6 +160,14 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         Return c + 1
 
     End Function
+
+    Private Sub ComboBoxPaquetes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPaquetes.SelectionChangeCommitted
+        Dim xCnx As New Oracle
+        Dim nm As String = "SELECT c.NOMBRE||' '||c.PATERNO||' '||c.MATERNO AS nombre  from clientes c, paquetes WHERE id_paquete=" & ComboBoxPaquetes.SelectedValue
+
+        Dim c As String = xCnx.objetoScalar(nm)
+        TextBox2.Text = c
+    End Sub
 
 
 End Class

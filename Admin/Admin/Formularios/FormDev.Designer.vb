@@ -29,6 +29,8 @@ Partial Class FormDev
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.gbPaises = New System.Windows.Forms.GroupBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBoxPaquetes = New System.Windows.Forms.ComboBox()
@@ -62,7 +64,7 @@ Partial Class FormDev
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1206, 970)
+        Me.Panel1.Size = New System.Drawing.Size(1274, 970)
         Me.Panel1.TabIndex = 0
         '
         'Button2
@@ -75,7 +77,7 @@ Partial Class FormDev
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(662, 758)
+        Me.Button2.Location = New System.Drawing.Point(696, 758)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 119
@@ -92,7 +94,7 @@ Partial Class FormDev
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(571, 758)
+        Me.Button1.Location = New System.Drawing.Point(605, 758)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 118
@@ -109,7 +111,7 @@ Partial Class FormDev
         Me.Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Ver.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ver.ForeColor = System.Drawing.Color.Black
-        Me.Ver.Location = New System.Drawing.Point(476, 758)
+        Me.Ver.Location = New System.Drawing.Point(510, 758)
         Me.Ver.Name = "Ver"
         Me.Ver.Size = New System.Drawing.Size(75, 23)
         Me.Ver.TabIndex = 121
@@ -126,7 +128,7 @@ Partial Class FormDev
         Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(752, 758)
+        Me.btneliminar.Location = New System.Drawing.Point(786, 758)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
         Me.btneliminar.TabIndex = 120
@@ -143,7 +145,7 @@ Partial Class FormDev
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(970, 786)
+        Me.btnCancelar.Location = New System.Drawing.Point(1004, 786)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 122
@@ -152,6 +154,8 @@ Partial Class FormDev
         '
         'gbPaises
         '
+        Me.gbPaises.Controls.Add(Me.TextBox2)
+        Me.gbPaises.Controls.Add(Me.Label7)
         Me.gbPaises.Controls.Add(Me.ComboBox1)
         Me.gbPaises.Controls.Add(Me.Label6)
         Me.gbPaises.Controls.Add(Me.ComboBoxPaquetes)
@@ -163,10 +167,27 @@ Partial Class FormDev
         Me.gbPaises.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbPaises.Location = New System.Drawing.Point(105, 245)
         Me.gbPaises.Name = "gbPaises"
-        Me.gbPaises.Size = New System.Drawing.Size(345, 187)
+        Me.gbPaises.Size = New System.Drawing.Size(345, 223)
         Me.gbPaises.TabIndex = 113
         Me.gbPaises.TabStop = False
         Me.gbPaises.Text = "Paquete"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(144, 138)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(161, 20)
+        Me.TextBox2.TabIndex = 126
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(18, 138)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(99, 16)
+        Me.Label7.TabIndex = 125
+        Me.Label7.Text = "Dueño del Paquete"
         '
         'ComboBox1
         '
@@ -190,7 +211,7 @@ Partial Class FormDev
         '
         Me.ComboBoxPaquetes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxPaquetes.FormattingEnabled = True
-        Me.ComboBoxPaquetes.Location = New System.Drawing.Point(142, 22)
+        Me.ComboBoxPaquetes.Location = New System.Drawing.Point(140, 51)
         Me.ComboBoxPaquetes.Name = "ComboBoxPaquetes"
         Me.ComboBoxPaquetes.Size = New System.Drawing.Size(161, 24)
         Me.ComboBoxPaquetes.TabIndex = 116
@@ -198,7 +219,7 @@ Partial Class FormDev
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(18, 146)
+        Me.Label4.Location = New System.Drawing.Point(18, 186)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(38, 16)
         Me.Label4.TabIndex = 115
@@ -207,14 +228,14 @@ Partial Class FormDev
         'datedev
         '
         Me.datedev.Enabled = False
-        Me.datedev.Location = New System.Drawing.Point(96, 142)
+        Me.datedev.Location = New System.Drawing.Point(96, 182)
         Me.datedev.Name = "datedev"
         Me.datedev.Size = New System.Drawing.Size(207, 20)
         Me.datedev.TabIndex = 114
         '
         'txtIDDev
         '
-        Me.txtIDDev.Location = New System.Drawing.Point(142, 59)
+        Me.txtIDDev.Location = New System.Drawing.Point(142, 19)
         Me.txtIDDev.MaxLength = 3
         Me.txtIDDev.Name = "txtIDDev"
         Me.txtIDDev.ReadOnly = True
@@ -224,7 +245,7 @@ Partial Class FormDev
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 62)
+        Me.Label3.Location = New System.Drawing.Point(16, 22)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 16)
         Me.Label3.TabIndex = 1
@@ -233,7 +254,7 @@ Partial Class FormDev
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 25)
+        Me.Label2.Location = New System.Drawing.Point(14, 54)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(120, 16)
         Me.Label2.TabIndex = 0
@@ -269,7 +290,7 @@ Partial Class FormDev
         Me.dgvDev.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvDev.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvDev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDev.Location = New System.Drawing.Point(485, 245)
+        Me.dgvDev.Location = New System.Drawing.Point(553, 245)
         Me.dgvDev.Name = "dgvDev"
         Me.dgvDev.ReadOnly = True
         Me.dgvDev.Size = New System.Drawing.Size(598, 432)
@@ -280,7 +301,7 @@ Partial Class FormDev
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(457, 41)
+        Me.Label1.Location = New System.Drawing.Point(491, 41)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 25)
         Me.Label1.TabIndex = 0
@@ -292,7 +313,7 @@ Partial Class FormDev
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoScrollMinSize = New System.Drawing.Size(1200, 970)
-        Me.ClientSize = New System.Drawing.Size(1223, 460)
+        Me.ClientSize = New System.Drawing.Size(1291, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormDev"
@@ -326,4 +347,6 @@ Partial Class FormDev
     Friend WithEvents ComboBoxPaquetes As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label7 As Label
 End Class

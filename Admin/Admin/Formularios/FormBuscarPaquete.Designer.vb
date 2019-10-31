@@ -70,7 +70,7 @@ Partial Class FormBuscarPaquete
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(552, 591)
+        Me.Button1.Location = New System.Drawing.Point(588, 591)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(111, 23)
         Me.Button1.TabIndex = 124
@@ -102,9 +102,9 @@ Partial Class FormBuscarPaquete
         Me.Ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown
         Me.Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Ver.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ver.Location = New System.Drawing.Point(232, 580)
+        Me.Ver.Location = New System.Drawing.Point(146, 591)
         Me.Ver.Name = "Ver"
-        Me.Ver.Size = New System.Drawing.Size(83, 44)
+        Me.Ver.Size = New System.Drawing.Size(94, 80)
         Me.Ver.TabIndex = 122
         Me.Ver.Text = "Ver Paquetes a Entregar Por Fecha Especifica"
         Me.Ver.UseVisualStyleBackColor = False
@@ -146,7 +146,7 @@ Partial Class FormBuscarPaquete
         Me.btcActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown
         Me.btcActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btcActualizar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btcActualizar.Location = New System.Drawing.Point(332, 591)
+        Me.btcActualizar.Location = New System.Drawing.Point(296, 591)
         Me.btcActualizar.Name = "btcActualizar"
         Me.btcActualizar.Size = New System.Drawing.Size(90, 23)
         Me.btcActualizar.TabIndex = 119

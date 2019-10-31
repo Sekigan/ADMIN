@@ -65,6 +65,7 @@ Module Globales
         combo.ValueMember = valor
 
     End Sub
+
     Public Sub muestra(tabla As DataGridView, consulta As String)
 
         Using cn As New OracleConnection With {.ConnectionString = "Data Source=XE;User Id=PAQUETES;Password=its1;"}

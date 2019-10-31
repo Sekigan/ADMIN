@@ -5,7 +5,6 @@ Public Class Login
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label1.Visible = False
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
@@ -42,7 +41,6 @@ Public Class Login
     End Sub
     Private Sub SoloNumerosSinPuntos_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_user.KeyPress
         If Not (Char.IsNumber(e.KeyChar)) And Not e.KeyChar = Chr(Keys.Delete) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
-
             e.Handled = True
         ElseIf e.KeyChar = "." Then
             e.Handled = True

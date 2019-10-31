@@ -251,17 +251,23 @@ where   empleados.id_pais = colonias.id_pais and
     End Sub
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+
         Try
-            If MessageBox.Show("Esta Seguro", "Confirmar", MessageBoxButtons.YesNoCancel) = DialogResult.Yes Then
+            If ExistePaquete(txtId.Text) Then
+                MsgBox("El empleado no se puede eliminar revisa los paquetes")
+            Else
+                If MessageBox.Show("Esta Seguro", "Confirmar", MessageBoxButtons.YesNoCancel) = DialogResult.Yes Then
 
-                Dim empl As New Empleado
+                    Dim empl As New Empleado
 
 
-                empl.realizarQuery("DELETE FROM LOGIN WHERE ID_EMPLEADO=" & txtId.Text)
-                empl.realizarQuery("DELETE FROM EMPLEADOS WHERE ID_EMPLEADO=" & txtId.Text)
+                    empl.realizarQuery("DELETE FROM LOGIN WHERE ID_EMPLEADO=" & txtId.Text)
+                    empl.realizarQuery("DELETE FROM EMPLEADOS WHERE ID_EMPLEADO=" & txtId.Text)
 
-                MessageBox.Show("EMPLEADO BORRADO")
-                muestra(dgvUsuarios, "select	 EMPLEADOS.ID_EMPLEADO as ID_EMPLEADO,
+                    MessageBox.Show("EMPLEADO BORRADO")
+                End If
+            End If
+            muestra(dgvUsuarios, "select	 EMPLEADOS.ID_EMPLEADO as ID_EMPLEADO,
          EMPLEADOS.NOMBRE as NOMBRE,
          EMPLEADOS.PATERNO as PATERNO,
          EMPLEADOS.MATERNO as MATERNO,
@@ -292,13 +298,15 @@ where   empleados.id_pais = colonias.id_pais and
 	empleados.id_ciudad = colonias.id_ciudad and
 	empleados.id_ciudad = ciudades.id_ciudad and
 	empleados.id_colonia = colonias.id_colonia ")
-            End If
+
         Catch ex As Exception
             MsgBox("Error")
         End Try
 
-        txtId.Text = contar()
+
         met.LimpiarCamposG(gbUsr)
+
+        txtId.Text = contar()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -341,15 +349,15 @@ where   empleados.id_pais = colonias.id_pais and
         xDT = xCnx.objetoDataAdapter(nm)
         Dim Contra As String = CStr(xDT.Rows(0)("contrasena"))
 
-        Try
 
-            Dim Sex As String
+
+        Dim Sex As String
             If ComboBoxSex.SelectedIndex = 0 Then
                 Sex = "F"
             Else
                 Sex = "M"
             End If
-
+        Try
             Dim consulta As String = "UPDATE EMPLEADOS SET NOMBRE='" & txtNombre.Text & "',PATERNO='" & txtPaterno.Text & "',MATERNO='" & txtMaterno.Text & "',RFC='" &
                     txtRFC.Text & "',CURP='" & TxtCurp.Text & "',ID_SEXO=" & Sex & ",EMAIL='" & txtemai.Text & "',TELEFONO='" &
                     txttef.Text & "',NUMERO_CASA ='" & txtnCa.Text & "',CALLE='" & txtca.Text & "',ID_COLONIA=" &
@@ -383,11 +391,6 @@ where   empleados.id_pais = colonias.id_pais and
                     End If
                 End If
             End If
-
-
-
-
-
 
         Catch ex As Exception
             MsgBox("Error")
@@ -480,5 +483,20 @@ where   empleados.id_pais = colonias.id_pais and
 
 
     End Function
+    Public Function ExistePaquete(ByVal id As Integer) As Boolean
 
+        Dim xCnx As New Oracle
+
+        Dim nm As String = "select	 ID_EMPLEADO from	 paquetes where ID_EMPLEADO=" & txtId.Text
+
+
+
+        Dim count As Integer = xCnx.objetoScalar(nm)
+        If count = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+
+    End Function
 End Class

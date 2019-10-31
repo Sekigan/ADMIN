@@ -23,10 +23,10 @@ Partial Class FormEntregas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Editar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.gbPaises = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -53,10 +53,10 @@ Partial Class FormEntregas
         '
         Me.Panel1.AutoSize = True
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.Editar)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.btneliminar)
         Me.Panel1.Controls.Add(Me.btnCancelar)
         Me.Panel1.Controls.Add(Me.gbPaises)
         Me.Panel1.Controls.Add(Me.dgvEntregas)
@@ -64,8 +64,25 @@ Partial Class FormEntregas
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1325, 970)
+        Me.Panel1.Size = New System.Drawing.Size(1369, 970)
         Me.Panel1.TabIndex = 0
+        '
+        'Editar
+        '
+        Me.Editar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Editar.BackColor = System.Drawing.Color.Silver
+        Me.Editar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Editar.FlatAppearance.BorderSize = 0
+        Me.Editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown
+        Me.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Editar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Editar.ForeColor = System.Drawing.Color.Black
+        Me.Editar.Location = New System.Drawing.Point(839, 557)
+        Me.Editar.Name = "Editar"
+        Me.Editar.Size = New System.Drawing.Size(75, 23)
+        Me.Editar.TabIndex = 134
+        Me.Editar.Text = "Editar"
+        Me.Editar.UseVisualStyleBackColor = False
         '
         'DataGridView1
         '
@@ -86,7 +103,7 @@ Partial Class FormEntregas
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(721, 555)
+        Me.Button1.Location = New System.Drawing.Point(743, 555)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 128
@@ -103,29 +120,12 @@ Partial Class FormEntregas
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(626, 555)
+        Me.Button3.Location = New System.Drawing.Point(648, 555)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 131
         Me.Button3.Text = "Ver"
         Me.Button3.UseVisualStyleBackColor = False
-        '
-        'btneliminar
-        '
-        Me.btneliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btneliminar.BackColor = System.Drawing.Color.Silver
-        Me.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btneliminar.FlatAppearance.BorderSize = 0
-        Me.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown
-        Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(816, 555)
-        Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btneliminar.TabIndex = 130
-        Me.btneliminar.Text = "Eliminar"
-        Me.btneliminar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
@@ -137,7 +137,7 @@ Partial Class FormEntregas
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(1120, 583)
+        Me.btnCancelar.Location = New System.Drawing.Point(1142, 583)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 132
@@ -282,7 +282,7 @@ Partial Class FormEntregas
         Me.dgvEntregas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEntregas.Location = New System.Drawing.Point(672, 68)
+        Me.dgvEntregas.Location = New System.Drawing.Point(716, 68)
         Me.dgvEntregas.Name = "dgvEntregas"
         Me.dgvEntregas.ReadOnly = True
         Me.dgvEntregas.Size = New System.Drawing.Size(598, 432)
@@ -304,7 +304,7 @@ Partial Class FormEntregas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoScrollMinSize = New System.Drawing.Size(1200, 970)
-        Me.ClientSize = New System.Drawing.Size(1342, 460)
+        Me.ClientSize = New System.Drawing.Size(1386, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormEntregas"
@@ -323,7 +323,6 @@ Partial Class FormEntregas
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents btneliminar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents gbPaises As GroupBox
     Friend WithEvents Label5 As Label
@@ -341,4 +340,5 @@ Partial Class FormEntregas
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Editar As Button
 End Class

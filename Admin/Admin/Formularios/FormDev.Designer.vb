@@ -26,7 +26,6 @@ Partial Class FormDev
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Ver = New System.Windows.Forms.Button()
-        Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.gbPaises = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -55,7 +54,6 @@ Partial Class FormDev
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Ver)
-        Me.Panel1.Controls.Add(Me.btneliminar)
         Me.Panel1.Controls.Add(Me.btnCancelar)
         Me.Panel1.Controls.Add(Me.gbPaises)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -64,7 +62,7 @@ Partial Class FormDev
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1274, 970)
+        Me.Panel1.Size = New System.Drawing.Size(1369, 970)
         Me.Panel1.TabIndex = 0
         '
         'Button2
@@ -77,7 +75,7 @@ Partial Class FormDev
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(696, 758)
+        Me.Button2.Location = New System.Drawing.Point(743, 758)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 119
@@ -94,7 +92,7 @@ Partial Class FormDev
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(605, 758)
+        Me.Button1.Location = New System.Drawing.Point(652, 758)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 118
@@ -111,29 +109,12 @@ Partial Class FormDev
         Me.Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Ver.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ver.ForeColor = System.Drawing.Color.Black
-        Me.Ver.Location = New System.Drawing.Point(510, 758)
+        Me.Ver.Location = New System.Drawing.Point(557, 758)
         Me.Ver.Name = "Ver"
         Me.Ver.Size = New System.Drawing.Size(75, 23)
         Me.Ver.TabIndex = 121
         Me.Ver.Text = "Ver"
         Me.Ver.UseVisualStyleBackColor = False
-        '
-        'btneliminar
-        '
-        Me.btneliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btneliminar.BackColor = System.Drawing.Color.Silver
-        Me.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btneliminar.FlatAppearance.BorderSize = 0
-        Me.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown
-        Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btneliminar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btneliminar.ForeColor = System.Drawing.Color.Black
-        Me.btneliminar.Location = New System.Drawing.Point(786, 758)
-        Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btneliminar.TabIndex = 120
-        Me.btneliminar.Text = "Eliminar"
-        Me.btneliminar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
@@ -145,7 +126,7 @@ Partial Class FormDev
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelar.Location = New System.Drawing.Point(1004, 786)
+        Me.btnCancelar.Location = New System.Drawing.Point(1051, 786)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 122
@@ -290,7 +271,7 @@ Partial Class FormDev
         Me.dgvDev.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvDev.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvDev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDev.Location = New System.Drawing.Point(553, 245)
+        Me.dgvDev.Location = New System.Drawing.Point(648, 245)
         Me.dgvDev.Name = "dgvDev"
         Me.dgvDev.ReadOnly = True
         Me.dgvDev.Size = New System.Drawing.Size(598, 432)
@@ -301,7 +282,7 @@ Partial Class FormDev
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(491, 41)
+        Me.Label1.Location = New System.Drawing.Point(538, 41)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 25)
         Me.Label1.TabIndex = 0
@@ -313,7 +294,7 @@ Partial Class FormDev
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoScrollMinSize = New System.Drawing.Size(1200, 970)
-        Me.ClientSize = New System.Drawing.Size(1291, 460)
+        Me.ClientSize = New System.Drawing.Size(1386, 460)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormDev"
@@ -342,7 +323,6 @@ Partial Class FormDev
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Ver As Button
-    Friend WithEvents btneliminar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents ComboBoxPaquetes As ComboBox
     Friend WithEvents Label6 As Label

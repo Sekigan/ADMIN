@@ -266,14 +266,16 @@ where   clientes.id_pais = colonias.id_pais and
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim Insert As String
 
-        Dim Sex As String
-        If ComboBoxSex.SelectedIndex = 1 Then
-            Sex = "F"
-        Else
-            Sex = "M"
-        End If
+
         Try
-            Insert = "update clientes set id_cliente=" & txtIdCliente.Text & ",id_pais = " &
+            Dim Sex As String
+            If ComboBoxSex.SelectedIndex = 1 Then
+                Sex = "F"
+            Else
+                Sex = "M"
+            End If
+
+            Insert = "update clientes set id_pais = " &
                      ComboBoxPais.SelectedValue & ", id_estado = " &
                     ComboBoxEstad.SelectedValue & ",id_ciudad =" &
                     ComboBoxCiudad.SelectedValue & ",id_colonia =" &
@@ -282,8 +284,7 @@ where   clientes.id_pais = colonias.id_pais and
                     txtPaterno.Text & "',materno ='" &
                     txtMaterno.Text & "',edad=" & TxtEdad.Text &
                     ",rfc='" & TxtRFC.Text & "',curp ='" &
-                        TxtCurp.Text & "',sexo='" &
-            Sex & "',correo ='" &
+                        TxtCurp.Text & "',sexo='" & Sex & "',correo ='" &
             Textemail.Text & "',telefono=" &
             TxtTel.Text & ",numerocasa=" &
             TxtNcasa.Text & ",calle='" &
@@ -293,7 +294,7 @@ where   clientes.id_pais = colonias.id_pais and
             MessageBox.Show("CLIENTE ACTUALIZADO")
             met.LimpiarCamposG(gbUsr)
         Catch ex As Exception
-            MsgBox("Verifica la informacion")
+            MsgBox("El cliente debe de tener paquetes existentes")
         End Try
 
         txtIdCliente.Text = contar()

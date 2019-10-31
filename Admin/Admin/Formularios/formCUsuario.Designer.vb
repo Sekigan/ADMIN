@@ -202,6 +202,7 @@ Partial Class formCUsuario
         'txttef
         '
         Me.txttef.Location = New System.Drawing.Point(144, 318)
+        Me.txttef.MaxLength = 10
         Me.txttef.Name = "txttef"
         Me.txttef.Size = New System.Drawing.Size(157, 20)
         Me.txttef.TabIndex = 92

@@ -11,8 +11,8 @@
         from ENTREGAS, Clientes cd,clientes re,empleados, paquetes 
         where entregas.id_paquete = paquetes.id_paquete and
         entregas.id_empleado = empleados.id_empleado and 
-        paquetes.id_cliente = cd.id_cliente and
-            paquetes.id_cliente_d = re.id_cliente")
+        paquetes.id_cliente = re.id_cliente and
+            paquetes.id_cliente_d = cd.id_cliente")
 
         poblarComboBox(ComboBox1, "SELECT empleados.id_empleado, NOMBRE||' '||PATERNO||' '||MATERNO AS NOMBRE FROM  empleados order by ID_empleado", "id_empleado", "nombre")
         poblarComboBox(ComboBoxPaquete, "SELECT paquetes.id_paquete, id_paquete||'.- '||Contenido AS NOMBRE FROM  paquetes order by ID_paquete", "id_paquete", "nombre")
@@ -39,8 +39,8 @@
             Dim mm As Integer = DateTimePicker1.Value.Month.ToString
         Dim yy As Integer = DateTimePicker1.Value.Year
 
-        fecha1 = dd & "/" & "0" & mm & "/" & yy
-            Dim nm As String = "select	 PAQUETES.FECHA_ENTREGA as FECHA_ENTREGA 
+        fecha1 = dd & "/" & mm & "/" & yy
+        Dim nm As String = "select	 PAQUETES.FECHA_ENTREGA as FECHA_ENTREGA 
                              from	 PAQUETES PAQUETES WHERE ID_PAQUETE =" & ComboBoxPaquete.SelectedValue
             xDT = xCnx.objetoDataAdapter(nm)
             fecha = CStr(xDT.Rows(0)("FECHA_ENTREGA"))
@@ -92,26 +92,32 @@
 	    empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
         re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
         cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
-        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
-        entregas.id_empleado = empleados.id_empleado ")
+        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes 
+        where entregas.id_paquete = paquetes.id_paquete and
+        entregas.id_empleado = empleados.id_empleado and 
+        paquetes.id_cliente = re.id_cliente and
+            paquetes.id_cliente_d = cd.id_cliente")
         txtID.Text = contar()
     End Sub
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-        If MessageBox.Show("Esta Seguro", "Confirmar", MessageBoxButtons.YesNoCancel) = DialogResult.Yes Then
-            met.realizarQuery("DELETE FROM ENTREGAS WHERE ID_ENTREGA=" & txtID.Text)
-            MessageBox.Show("PAQUETE BORRADO")
-        End If
-        muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
-	    entregas.fecha_entrega as fecha_entrega,
-	    'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
-	    empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
-        re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
-        cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
-        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
-        entregas.id_empleado = empleados.id_empleado ")
-        txtID.Text = contar()
-    End Sub
+    'Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+    '    If MessageBox.Show("Esta Seguro", "Confirmar", MessageBoxButtons.YesNoCancel) = DialogResult.Yes Then
+    '        met.realizarQuery("DELETE FROM ENTREGAS WHERE ID_ENTREGA=" & txtID.Text)
+    '        MessageBox.Show("PAQUETE BORRADO")
+    '    End If
+    '    muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
+    ' entregas.fecha_entrega as fecha_entrega,
+    ' 'ID : '||paquetes.id_paquete||' Contenido: '||paquetes.contenido as Informacion_Paquete,
+    ' empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
+    '    re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
+    '    cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
+    '    from ENTREGAS, Clientes cd,clientes re,empleados, paquetes 
+    '    where entregas.id_paquete = paquetes.id_paquete and
+    '    entregas.id_empleado = empleados.id_empleado and 
+    '    paquetes.id_cliente = re.id_cliente and
+    '        paquetes.id_cliente_d = cd.id_cliente")
+    '    txtID.Text = contar()
+    'End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         muestra(dgvEntregas, "Select  entregas.id_entrega as id_entrega,
@@ -120,8 +126,11 @@
 	    empleados.nombre||' '||empleados.paterno||' '||empleados.materno as nombre_empleado,
         re.nombre||' '||re.paterno||' '||re.materno as nombre_remitente, 
         cd.nombre||' '||cd.paterno||' '||cd.materno as nombre_destinatari0
-        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
-        entregas.id_empleado = empleados.id_empleado ")
+        from ENTREGAS, Clientes cd,clientes re,empleados, paquetes 
+        where entregas.id_paquete = paquetes.id_paquete and
+        entregas.id_empleado = empleados.id_empleado and 
+        paquetes.id_cliente = re.id_cliente and
+            paquetes.id_cliente_d = cd.id_cliente")
         txtID.Text = contar()
     End Sub
 
@@ -203,11 +212,13 @@
             '   from ENTREGAS, Clientes cd,clientes re,empleados, paquetes where entregas.id_paquete = paquetes.id_paquete and
             '   entregas.id_empleado = empleados.id_empleado ")
 
-
-            TextBox2.Text = row.Cells("nombre_remitente").Value.ToString
             txtID.Text = row.Cells("ID_Entrega").Value.ToString
-            ComboBox1.Text = row.Cells("nombre_empleado").Value.ToString
             ComboBoxPaquete.Text = row.Cells("Informacion_Paquete").Value.ToString
+            ComboBox1.Text = row.Cells("nombre_empleado").Value.ToString
+            TextBox2.Text = row.Cells("nombre_remitente").Value.ToString
+
+
+
 
 
 
@@ -225,6 +236,28 @@
 
 
     End Sub
+
+    Private Sub Editar_Click(sender As Object, e As EventArgs) Handles Editar.Click
+        Dim dd As Integer = DateTimePicker1.Value.Day
+        Dim mm As Integer = DateTimePicker1.Value.Month.ToString
+        Dim yy As Integer = DateTimePicker1.Value.Year
+        Dim fecha1 As String = dd & "/" & mm & "/" & yy
+        Dim xCnx As New Oracle
+        Try
+            Dim up As String = "update entregas set id_entrega=" & txtID.Text & ",id_paquete=" & ComboBoxPaquete.SelectedValue & ",id_empleado=" & ComboBox1.SelectedValue & ",fecha_entrega='" & fecha1 & "' where id_entrega=" & txtID.Text
+            xCnx.objetoCommand(up)
+
+            MsgBox("ENTREGA ACTUALIZADA")
+        Catch er As Exception
+            MsgBox("Verifica info", vbInformation)
+        End Try
+    End Sub
+
+
+
+
+
+
 
 
 End Class

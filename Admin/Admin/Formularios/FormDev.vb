@@ -22,7 +22,7 @@
         Dim dd As Integer = datedev.Value.Day
         Dim mm As Integer = datedev.Value.Month.ToString
         Dim yy As Integer = datedev.Value.Year
-        Dim fecha1 As String = dd & "/" & "0" & mm & "/" & yy
+        Dim fecha1 As String = dd & "/" & mm & "/" & yy
 
         If txtMotivo.Text = "" Then
             MessageBox.Show("Falta capturar datos")
@@ -42,6 +42,7 @@
             Try
                 Dim insert As String = "Insert into devoluciones values(" & txtIDDev.Text & "," & ComboBoxPaquetes.SelectedValue & "," & ComboBox1.SelectedValue & ",'" & fecha1 & "','" & txtMotivo.Text & "')"
                 met.realizarQuery(insert)
+                MsgBox("Paquete devuelto")
             Catch ex As Exception
                 MsgBox("Verifica bien la informacion", vbInformation)
             End Try
@@ -57,21 +58,22 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         txtIDDev.Text = contar()
 
     End Sub
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-        Try
-            Dim delete As String = "Delete from devoluciones where ID_DEVOLUCION=" & txtIDDev.Text
-            met.realizarQuery(delete)
-        Catch ex As Exception
-            MsgBox("Verifica la informacion", vbInformation)
-        End Try
-        muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
-	devoluciones.fecha_devolucion as Fecha_devolucion,
-	devoluciones.motivo as Motivo_devolucion,
-	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
-from DEVOLUCIONES, paquetes
-where devoluciones.id_paquete = paquetes.id_paquete")
-        txtIDDev.Text = contar()
-    End Sub
+    '    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+    '        Try
+    '            Dim delete As String = "Delete from devoluciones where ID_DEVOLUCION=" & txtIDDev.Text
+    '            met.realizarQuery(delete)
+    '            MsgBox("Paquete eliminado")
+    '        Catch ex As Exception
+    '            MsgBox("Verifica la informacion", vbInformation)
+    '        End Try
+    '        muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
+    '	devoluciones.fecha_devolucion as Fecha_devolucion,
+    '	devoluciones.motivo as Motivo_devolucion,
+    '	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
+    'from DEVOLUCIONES, paquetes
+    'where devoluciones.id_paquete = paquetes.id_paquete")
+    '        txtIDDev.Text = contar()
+    '    End Sub
 
     Private Sub dgvDev_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDev.CellContentClick
         If e.RowIndex >= 0 Then
@@ -81,6 +83,7 @@ where devoluciones.id_paquete = paquetes.id_paquete")
             ComboBoxPaquetes.Text = row.Cells("Informacion_paquete").Value.ToString
             txtIDDev.Text = row.Cells("id_devolucion").Value.ToString
             txtMotivo.Text = row.Cells("Motivo_devolucion").Value.ToString
+
 
         End If
     End Sub
@@ -101,20 +104,20 @@ where devoluciones.id_paquete = paquetes.id_paquete")
         Dim dd As Integer = datedev.Value.Day
         Dim mm As Integer = datedev.Value.Month.ToString
         Dim yy As Integer = datedev.Value.Year
-        Dim fecha1 As String = dd & "/" & "0" & mm & "/" & yy
+        Dim fecha1 As String = dd & "/" & mm & "/" & yy
         Try
-            Dim up As String = "update devoluciones set id_devolucion=" & txtIDDev.Text & ",id_paquete=" & ComboBoxPaquetes.SelectedValue & ",id_empleado=" & ComboBox1.SelectedValue & ",fecha_devolucion='" & fecha1 & "',motivo='" & txtMotivo.Text & "'where id_devolucion=" & txtIDDev.Text
+            Dim up As String = "update devoluciones set id_paquete=" & ComboBoxPaquetes.SelectedValue & ",id_empleado=" & ComboBox1.SelectedValue & ",fecha_devolucion='" & fecha1 & "',motivo='" & txtMotivo.Text & "' where id_devolucion=" & txtIDDev.Text
             met.realizarQuery(up)
             MsgBox("DEV ACTUALIZADA")
         Catch er As Exception
             MsgBox("Verifica inf", vbInformation)
         End Try
         muestra(dgvDev, "Select devoluciones.id_devolucion as id_devolucion,
-	devoluciones.fecha_devolucion as Fecha_devolucion,
-	devoluciones.motivo as Motivo_devolucion,
-	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
-from DEVOLUCIONES, paquetes
-where devoluciones.id_paquete = paquetes.id_paquete")
+    	devoluciones.fecha_devolucion as Fecha_devolucion,
+    	devoluciones.motivo as Motivo_devolucion,
+    	'ID: '||paquetes.id_paquete||' CONTENIDO: '||paquetes.contenido as Informacion_paquete
+        from DEVOLUCIONES, paquetes
+        where devoluciones.id_paquete = paquetes.id_paquete")
         txtIDDev.Text = contar()
     End Sub
 
@@ -163,7 +166,8 @@ where devoluciones.id_paquete = paquetes.id_paquete")
 
     Private Sub ComboBoxPaquetes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPaquetes.SelectionChangeCommitted
         Dim xCnx As New Oracle
-        Dim nm As String = "SELECT c.NOMBRE||' '||c.PATERNO||' '||c.MATERNO AS nombre  from clientes c, paquetes WHERE id_paquete=" & ComboBoxPaquetes.SelectedValue
+
+        Dim nm As String = "SELECT c.NOMBRE||' '||c.PATERNO||' '||c.MATERNO AS nombre  from clientes c, paquetes WHERE c.id_cliente=paquetes.id_cliente_d and  paquetes.id_paquete=" & ComboBoxPaquetes.SelectedValue
 
         Dim c As String = xCnx.objetoScalar(nm)
         TextBox2.Text = c
